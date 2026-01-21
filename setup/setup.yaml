@@ -47,3 +47,8 @@
         file:
           path: "{{dir}}/micromamba.tar"
           state: "absent"
+
+      - name: "Add micromamba to path and autocomplete"
+        shell: "{{dir}}/micromamba/bin/micromamba shell init -s bash -r {{home}}/.local/micromamba"
+        args:
+          executable: /bin/bash
