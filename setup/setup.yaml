@@ -1,0 +1,10 @@
+- name: setup
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Show User
+      debug:
+        msg: "Ansible is running as: {{ansible_user_id}}"
+
+    
