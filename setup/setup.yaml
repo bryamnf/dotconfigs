@@ -1,10 +1,49 @@
 - name: setup
   hosts: localhost
   connection: local
+  
+  vars:
+    home: "{{ansible_env.HOME}}"
+    dir: "{{home}}/.local"
 
   tasks:
-    - name: Show User
+    - name: "Show User"
       debug:
-        msg: "Ansible is running as: {{ansible_user_id}}"
+        msg: 'Ansible is running as: {{ansible_user_id}} and with $HOME: {{home}}'
 
-    
+    - name: 'Set {{dir}} and its subdirectories'
+      file:
+        path: "{{dir}}/{{item}}" 
+        state: directory
+        mode: "700"
+      loop:
+        - bin
+        - lib
+        - share
+        - usr
+        - state
+        - micromamba
+
+    - name: "Check if micromamba is installed"
+      stat:
+        path: "{{dir}}/micromamba/bin"
+      register: micromamba_stat
+
+    - name: "Install micromamba"
+      when: not micromamba_stat.stat.exists
+      block:
+      - name: "Download micromamba.tar"
+        get_url:
+          url: "https://micro.mamba.pm/api/micromamba/linux-64/latest"
+          use_netrc: false
+          dest: "{{dir}}/micromamba.tar"
+
+      - name: "Extract micromamba"
+        unarchive:
+          src: "{{dir}}/micromamba.tar"
+          dest: "{{dir}}/micromamba"
+
+      - name: "Remove micromamba.tar"
+        file:
+          path: "{{dir}}/micromamba.tar"
+          state: "absent"
