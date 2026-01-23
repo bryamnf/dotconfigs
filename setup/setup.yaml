@@ -5,6 +5,10 @@
   vars:
     home: "{{ansible_env.HOME}}"
     dir: "{{home}}/.local"
+    bin: "{{home}}/.micromamba/bin"
+    pkgs:
+      - nvim
+      - rust
 
   tasks:
     - name: "Show User"
@@ -22,33 +26,62 @@
         - share
         - usr
         - state
-        - micromamba
+
+    - name: 'Create ~/.micromamba'
+      file:
+        path: "{{home}}/.micromamba" 
+        state: directory
+        mode: "700"
 
     - name: "Check if micromamba is installed"
       stat:
-        path: "{{dir}}/micromamba/bin"
+        path: "{{bin}}/micromamba"
       register: micromamba_stat
 
     - name: "Install micromamba"
       when: not micromamba_stat.stat.exists
       block:
+
       - name: "Download micromamba.tar"
         get_url:
           url: "https://micro.mamba.pm/api/micromamba/linux-64/latest"
           use_netrc: false
-          dest: "{{dir}}/micromamba.tar"
+          dest: "{{home}}/.micromamba/micromamba.tar"
 
       - name: "Extract micromamba"
         unarchive:
-          src: "{{dir}}/micromamba.tar"
-          dest: "{{dir}}/micromamba"
+          src: "{{home}}/.micromamba/micromamba.tar"
+          dest: "{{home}}/.micromamba"
 
       - name: "Remove micromamba.tar"
         file:
-          path: "{{dir}}/micromamba.tar"
+          path: "{{home}}/.micromamba/micromamba.tar"
           state: "absent"
-
+      
       - name: "Micromamba bash init"
-        shell: "{{dir}}/micromamba/bin/micromamba shell init -s bash -r {{home}}/.local/micromamba"
+        shell: "{{home}}/.micromamba/bin/micromamba shell init -s bash -r {{home}}/.micromamba"
         args:
           executable: /bin/bash
+    
+    - name: "Get installed packages from micromamba"
+      command: "{{ bin }}/micromamba list --json"
+      register: mamba_list
+      changed_when: false
+    
+    - name: "Extract installed package names" 
+      set_fact:
+        installed_pkgs: >-
+          {{ (mamba_list.stdout | from_json)
+             | map(attribute='name')
+             | list }}
+
+    - name: "Compute missing packages" 
+      set_fact:
+        missing_pkgs: "{{ pkgs | difference(installed_pkgs) }}"
+
+
+    - name: "Install missing packages"
+      command: >
+        {{ bin }}/micromamba install -y conda-forge::
+        {{ missing_pkgs | join(' ') }}
+      when: missing_pkgs | length > 0
