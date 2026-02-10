@@ -27,11 +27,26 @@
         - usr
         - state
 
+    - name: 'Set bashrc and profile'
+      copy:
+        src: "{{item}}"    
+        dest: "{{home}}/.{{item}}"
+        mode: '600'
+      loop:
+        - bashrc
+        - profile
+
     - name: 'Create ~/.micromamba'
       file:
         path: "{{home}}/.micromamba" 
         state: directory
         mode: "700"
+        
+    - name: 'Set mambarc'
+      copy:
+        src: "condarc"    
+        dest: "{{ home }}/.micromamba/condarc"
+        mode: '600'
 
     - name: "Check if micromamba is installed"
       stat:
@@ -62,26 +77,29 @@
         shell: "{{home}}/.micromamba/bin/micromamba shell init -s bash -r {{home}}/.micromamba"
         args:
           executable: /bin/bash
-    
-    - name: "Get installed packages from micromamba"
-      command: "{{ bin }}/micromamba list --json"
+
+     
+    - name: "List packages in env"
+      command: "{{ bin }}/micromamba list -n base --json"
       register: mamba_list
       changed_when: false
     
-    - name: "Extract installed package names" 
+    - name: "Extract installed package names"
       set_fact:
         installed_pkgs: >-
-          {{ (mamba_list.stdout | from_json)
-             | map(attribute='name')
-             | list }}
-
-    - name: "Compute missing packages" 
+          {{
+            (mamba_list.stdout | from_json).packages
+            | map(attribute='name')
+            | list
+          }}
+    
+    - name: "Compute missing packages"
       set_fact:
         missing_pkgs: "{{ pkgs | difference(installed_pkgs) }}"
-
-
+    
     - name: "Install missing packages"
       command: >
-        {{ bin }}/micromamba install -y conda-forge::
+        {{ bin }}/micromamba install -y -n base -c conda-forge
         {{ missing_pkgs | join(' ') }}
       when: missing_pkgs | length > 0
+      
