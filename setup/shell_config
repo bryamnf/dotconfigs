@@ -1,4 +1,0 @@
-# Enabling local installations
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/nvim/bin:$PATH"
-export PATH="$HOME/.local/usr/bin:$PATH"

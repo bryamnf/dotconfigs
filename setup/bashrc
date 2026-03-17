@@ -1,12 +1,16 @@
-#/bin/bash
+#!/bin/bash
 
 #######Bashrc set up###########
-path="$HOME/dotconfigs/setup"
-if [ -f "$path/shell_config" ] && [ -f "$path/ishell_config" ]; then
-    source "$path/shell_config"
-    if echo $- | grep -q "i"; then
-        source "$path/ishell_config"
-        echo "Using dotconfigs in interactive shell mode!"
-    fi
+if [ -f "$HOME/.ibashrc" ]; then
+	if  echo $- | grep -q "i"; then
+		source "$HOME/.ibashrc"
+    		echo "Using dotconfigs in interactive shell mode!"
+	fi
 fi
-##############################
+
+########Pixi set up############
+if [ -d "$HOME/.pixi" ]; then
+	export PATH="$HOME/.pixi/bin:$PATH"
+	eval "$(pixi completion --shell bash)"
+	echo "Using pixi as pkg manager"
+fi 
