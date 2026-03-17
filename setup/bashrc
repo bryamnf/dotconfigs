@@ -4,13 +4,18 @@
 if [ -f "$HOME/.ibashrc" ]; then
 	if  echo $- | grep -q "i"; then
 		source "$HOME/.ibashrc"
-    		echo "Using dotconfigs in interactive shell mode!"
+    		echo "[bashrc-log] Using dotconfigs in interactive shell mode!"
 	fi
 fi
 
 ########Pixi set up############
-if [ -d "$HOME/.pixi" ]; then
+if [ -x "$HOME/.pixi/bin/pixi" ]; then
 	export PATH="$HOME/.pixi/bin:$PATH"
 	eval "$(pixi completion --shell bash)"
-	echo "Using pixi as pkg manager"
+	echo "[bashrc-log] Using pixi as pkg manager!"
+	if [ -x $HOME/.pixi/bin/uv ] && [ -x $HOME/.pixi/bin/uvx ]; then 
+		eval "$(uv generate-shell-completion bash)"
+		eval "$(uvx --generate-shell-completion bash)"
+		echo "[bashrc-log] uv and uvx installed and sourced!"
+	fi
 fi 

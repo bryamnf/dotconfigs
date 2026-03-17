@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+install_pkgs(){
+	pixi global install nvim uv
+}
+
+
+echo "Creating symbolic links to bashrc, ibashrc and profile"
+ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
+ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
+ln -sf ~/dotconfigs/setup/profile ~/.profile
+
+if [ -x $HOME/.pixi/bin/pixi ]; then 
+	echo "Pixi already installed"
+	echo "Installing pkgs"
+	install_pkgs
+else
+	echo "Installing pixi"
+	curl -fsSL https://pixi.sh/install.sh | sh
+	echo "Installing pkgs"
+	install_pkgs
+fi
