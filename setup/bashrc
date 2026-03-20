@@ -11,11 +11,13 @@ fi
 ########Pixi set up############
 if [ -x "$HOME/.pixi/bin/pixi" ]; then
 	export PATH="$HOME/.pixi/bin:$PATH"
-	eval "$(pixi completion --shell bash)"
-	echo "[bashrc-log] Using pixi as pkg manager!"
-	if [ -x $HOME/.pixi/bin/uv ] && [ -x $HOME/.pixi/bin/uvx ]; then 
-		eval "$(uv generate-shell-completion bash)"
-		eval "$(uvx --generate-shell-completion bash)"
-		echo "[bashrc-log] uv and uvx installed and sourced!"
+	if  echo $- | grep -q "i"; then
+		eval "$(pixi completion --shell bash)"
+		echo "[bashrc-log] Using pixi as pkg manager!"
+		if [ -x $HOME/.pixi/bin/uv ] && [ -x $HOME/.pixi/bin/uvx ]; then 
+			eval "$(uv generate-shell-completion bash)"
+			eval "$(uvx --generate-shell-completion bash)"
+			echo "[bashrc-log] uv and uvx installed and sourced!"
+		fi
 	fi
 fi 
