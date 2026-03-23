@@ -3,6 +3,10 @@
 ##########Interactive shell#############
 if  echo $- | grep -q "i"; then
 
+	######Local binaries in path######
+	export PATH="$HOME/.local/bin:$PATH"
+	echo "[bashrc-log] ~/.local/bin in PATH"
+
 	#######ibashrc set up###########
 	if [ -f "$HOME/.ibashrc" ]; then
 		source "$HOME/.ibashrc"
@@ -23,11 +27,6 @@ if  echo $- | grep -q "i"; then
 			echo "[bashrc-log] uv and uvx are not intalled!"
 		fi
 	fi
-	
-	######Local binaries in path######
-	export PATH="$HOME/.local/bin:$PATH"
-	echo "[bashrc-log] Using ~/.local/bin in PATH"
-
 else
 ##########Non-interactive shell#############
 	if [ -d $HOME/.local/bin ] && [ -x "$HOME/.pixi/bin/pixi" ]; then
