@@ -18,8 +18,8 @@ if [ -x "$HOME/.pixi/bin/pixi" ]; then
 			eval "$(uv generate-shell-completion bash)"
 			eval "$(uvx --generate-shell-completion bash)"
 			echo "[bashrc-log] uv and uvx installed and sourced!"
+		else
+			echo "[bashrc-log] uv and uvx are not intalled!"
 		fi
-	else
-		echo "[bashrc-log] uv and uvx are not intalled!"
 	fi
 fi 
