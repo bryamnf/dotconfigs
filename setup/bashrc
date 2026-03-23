@@ -1,24 +1,20 @@
 #!/bin/bash
 
-#######Bashrc set up###########
-if [ -f "$HOME/.ibashrc" ]; then
-	if  echo $- | grep -q "i"; then
+##########Interactive shell#############
+if  echo $- | grep -q "i"; then
+
+	#######ibashrc set up###########
+	if [ -f "$HOME/.ibashrc" ]; then
 		source "$HOME/.ibashrc"
     		echo "[bashrc-log] Using dotconfigs in interactive shell mode!"
-		export PATH="$HOME/.local/bin:$PATH"
-		echo "[bashrc-log] Using ~/.local/bin in PATH"
 	fi
-fi
-
-########Pixi set up############
-if [ -x "$HOME/.pixi/bin/pixi" ]; then
-	export PATH="$HOME/.pixi/bin:$PATH"
-	export PATH="$HOME/.local/bin:$PATH"
-	if  echo $- | grep -q "i"; then
+	
+	########Pixi set up############
+	if [ -x "$HOME/.pixi/bin/pixi" ]; then		
+		export PATH="$HOME/.pixi/bin:$PATH"
 		eval "$(pixi completion --shell bash)"
 		echo "[bashrc-log] Using pixi as pkg manager!"
-		echo "[bashrc-log] Using ~/.local/bin in PATH"
-
+		
 		if [ -x $HOME/.pixi/bin/uv ] && [ -x $HOME/.pixi/bin/uvx ]; then 
 			eval "$(uv generate-shell-completion bash)"
 			eval "$(uvx --generate-shell-completion bash)"
@@ -27,4 +23,18 @@ if [ -x "$HOME/.pixi/bin/pixi" ]; then
 			echo "[bashrc-log] uv and uvx are not intalled!"
 		fi
 	fi
-fi 
+	
+	######Local binaries in path######
+	export PATH="$HOME/.local/bin:$PATH"
+	echo "[bashrc-log] Using ~/.local/bin in PATH"
+
+else
+##########Non-interactive shell#############
+	if [ -d $HOME/.local/bin ] && [ -x "$HOME/.pixi/bin/pixi" ]; then
+		######Local binaries in path######
+		export PATH="$HOME/.local/bin:$PATH"
+		########Pixi set up############
+		export PATH="$HOME/.pixi/bin:$PATH"
+	fi
+fi
+
