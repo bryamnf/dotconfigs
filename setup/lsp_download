@@ -1,0 +1,3 @@
+#!/bin/bash 
+pixi global install lua-language-server
+uv tool install basedpyright
