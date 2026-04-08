@@ -27,13 +27,32 @@ if  echo $- | grep -q "i"; then
 			echo "[bashrc-log] uv and uvx are not intalled!"
 		fi
 	fi
+
+  #########nvm set up###########
+  if [ -d $HOME/.nvm ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  fi
+
 else
 ##########Non-interactive shell#############
-	if [ -d $HOME/.local/bin ] && [ -x "$HOME/.pixi/bin/pixi" ]; then
-		######Local binaries in path######
+	if [ -d $HOME/.local/bin ]; then
+	######Local binaries in path######
 		export PATH="$HOME/.local/bin:$PATH"
-		########Pixi set up############
-		export PATH="$HOME/.pixi/bin:$PATH"
 	fi
+  
+  if [ -x "$HOME/.pixi/bin/pixi" ]; then
+	########Pixi set up############
+		export PATH="$HOME/.pixi/bin:$PATH"
+  fi
+
+  if [ -d $HOME/.nvm ]; then
+  #########nvm set up###########
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  fi
+
 fi
+
 

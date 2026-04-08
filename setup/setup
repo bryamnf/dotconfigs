@@ -21,3 +21,10 @@ else
 	echo "Installing pkgs"
 	install_pkgs
 fi
+
+if [ -d $HOME/.nvm ]; then
+       echo "nvm already installed"
+else
+      echo "Installing nvm"
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash      
+fi
