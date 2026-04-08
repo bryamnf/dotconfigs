@@ -3,6 +3,7 @@ vim.pack.add({{ src = 'https://github.com/catppuccin/nvim.git', version = 'main'
 require("catppuccin").setup({
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
     compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
+    additional_vim_regex_highlighting = false,
     background = { -- :h background
         light = "latte",
         dark = "mocha",
