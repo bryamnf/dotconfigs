@@ -12,26 +12,26 @@ if echo $- | grep -q "i"; then
     #######ibashrc set up###########
     if [ -f "$HOME/.ibashrc" ]; then
         source "$HOME/.ibashrc"
-        _log_ok="$_log_ok ibashrc"
+        _log_ok="$_log_ok ibashrc,"
     else
-        _log_warn="$_log_warn\n  [!] ~/.ibashrc not found"
+        _log_warn="$_log_warn [!] ~/.ibashrc not found"
     fi
 
     ########Pixi set up############
     if [ -x "$HOME/.pixi/bin/pixi" ]; then
         export PATH="$HOME/.pixi/bin:$PATH"
         eval "$(pixi completion --shell bash)"
-        _log_ok="$_log_ok pixi"
+        _log_ok="$_log_ok pixi,"
 
         if [ -x "$HOME/.pixi/bin/uv" ] && [ -x "$HOME/.pixi/bin/uvx" ]; then
             eval "$(uv generate-shell-completion bash)"
             eval "$(uvx --generate-shell-completion bash)"
-            _log_ok="$_log_ok uv/uvx"
+            _log_ok="$_log_ok uv/uvx,"
         else
-            _log_warn="$_log_warn\n  [!] uv/uvx not installed"
+            _log_warn="$_log_warn [!] uv/uvx not installed"
         fi
     else
-        _log_warn="$_log_warn\n  [!] pixi not found"
+        _log_warn="$_log_warn [!] pixi not found"
     fi
 
     #########nvm and npm set up###########
@@ -40,9 +40,9 @@ if echo $- | grep -q "i"; then
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
         eval "$(npm completion)"
-        _log_ok="$_log_ok nvm/npm"
+        _log_ok="$_log_ok nvm/npm,"
     else
-        _log_warn="$_log_warn\n  [!] nvm/npm not found"
+        _log_warn="$_log_warn  [!] nvm/npm not found"
     fi
 
     #########cargo/rust set up###########
@@ -50,16 +50,17 @@ if echo $- | grep -q "i"; then
         . "$HOME/.cargo/env"
         eval "$(rustup completions bash)"
         eval "$(rustup completions bash cargo)"
-        _log_ok="$_log_ok rust/cargo"
+        _log_ok="$_log_ok rust/cargo!"
     else
-        _log_warn="$_log_warn\n  [!] cargo/rust not found"
+        _log_warn="$_log_warn  [!] cargo/rust not found"
     fi
 
     # Summary
     if [ -z "$_log_warn" ]; then
-        echo "[bashrc] OK: $(_log_ok# trim leading space${_log_ok# })"
+        echo "[bashrc] OK: $_log_ok"
     else
-        echo "[bashrc] loaded:${_log_ok} |$(echo -e "$_log_warn")"
+        echo "[bashrc] loaded: $_log_ok" 
+        echo "[bashrc] warning: $_log_warn"
     fi
 
     unset _log_ok _log_warn
