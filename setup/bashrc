@@ -1,68 +1,77 @@
 #!/bin/bash
 
 ##########Interactive shell#############
-if  echo $- | grep -q "i"; then
+if echo $- | grep -q "i"; then
 
-	######Local binaries in path######
-	export PATH="$HOME/.local/bin:$PATH"
-	echo "[bashrc-log] ~/.local/bin in PATH"
+    _log_ok=""
+    _log_warn=""
 
-	#######ibashrc set up###########
-	if [ -f "$HOME/.ibashrc" ]; then
-		source "$HOME/.ibashrc"
-    		echo "[bashrc-log] Using dotconfigs in interactive shell mode!"
-	fi
-	
-	########Pixi set up############
-	if [ -x "$HOME/.pixi/bin/pixi" ]; then		
-		export PATH="$HOME/.pixi/bin:$PATH"
-		eval "$(pixi completion --shell bash)"
-		echo "[bashrc-log] Using pixi as pkg manager!"
-		
-		if [ -x $HOME/.pixi/bin/uv ] && [ -x $HOME/.pixi/bin/uvx ]; then 
-			eval "$(uv generate-shell-completion bash)"
-			eval "$(uvx --generate-shell-completion bash)"
-			echo "[bashrc-log] uv and uvx installed and sourced!"
-		else
-			echo "[bashrc-log] uv and uvx are not intalled!"
-		fi
-	fi
+    ######Local binaries in path######
+    export PATH="$HOME/.local/bin:$PATH"
 
-    #########nvm and npm set up###########
-    if [ -d $HOME/.npm ] && [ -d $HOME/.nvm ]; then
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-        eval "$(npm completion)" 
-        echo "[bashrc-log] nvm and npm installed and sourced!"
+    #######ibashrc set up###########
+    if [ -f "$HOME/.ibashrc" ]; then
+        source "$HOME/.ibashrc"
+        _log_ok="$_log_ok ibashrc"
+    else
+        _log_warn="$_log_warn\n  [!] ~/.ibashrc not found"
     fi
 
-    if [ -d $HOME/.cargo ]; then 
+    ########Pixi set up############
+    if [ -x "$HOME/.pixi/bin/pixi" ]; then
+        export PATH="$HOME/.pixi/bin:$PATH"
+        eval "$(pixi completion --shell bash)"
+        _log_ok="$_log_ok pixi"
+
+        if [ -x "$HOME/.pixi/bin/uv" ] && [ -x "$HOME/.pixi/bin/uvx" ]; then
+            eval "$(uv generate-shell-completion bash)"
+            eval "$(uvx --generate-shell-completion bash)"
+            _log_ok="$_log_ok uv/uvx"
+        else
+            _log_warn="$_log_warn\n  [!] uv/uvx not installed"
+        fi
+    else
+        _log_warn="$_log_warn\n  [!] pixi not found"
+    fi
+
+    #########nvm and npm set up###########
+    if [ -d "$HOME/.npm" ] && [ -d "$HOME/.nvm" ]; then
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        eval "$(npm completion)"
+        _log_ok="$_log_ok nvm/npm"
+    else
+        _log_warn="$_log_warn\n  [!] nvm/npm not found"
+    fi
+
+    #########cargo/rust set up###########
+    if [ -d "$HOME/.cargo" ]; then
         . "$HOME/.cargo/env"
         eval "$(rustup completions bash)"
         eval "$(rustup completions bash cargo)"
-        echo "[bashrc-log] cargo and rust installed and sourced!"
+        _log_ok="$_log_ok rust/cargo"
+    else
+        _log_warn="$_log_warn\n  [!] cargo/rust not found"
     fi
 
-else
+    # Summary
+    if [ -z "$_log_warn" ]; then
+        echo "[bashrc] OK: $(_log_ok# trim leading space${_log_ok# })"
+    else
+        echo "[bashrc] loaded:${_log_ok} |$(echo -e "$_log_warn")"
+    fi
+
+    unset _log_ok _log_warn
+
 ##########Non-interactive shell#############
-	if [ -d $HOME/.local/bin ]; then
-	######Local binaries in path######
-		export PATH="$HOME/.local/bin:$PATH"
-	fi
-  
-    if [ -x "$HOME/.pixi/bin/pixi" ]; then
-      ########Pixi set up############
-      	export PATH="$HOME/.pixi/bin:$PATH"
-    fi
-      
-    if [ -d $HOME/.nvm ]; then
-    #########nvm set up###########
-      export NVM_DIR="$HOME/.nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    fi
+else
+    [ -d "$HOME/.local/bin" ]       && export PATH="$HOME/.local/bin:$PATH"
+    [ -x "$HOME/.pixi/bin/pixi" ]   && export PATH="$HOME/.pixi/bin:$PATH"
+    [ -d "$HOME/.cargo" ]           && . "$HOME/.cargo/env"
 
-    if [ -d $HOME/.cargo ]; then 
-        . "$HOME/.cargo/env"
+    if [ -d "$HOME/.nvm" ]; then
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     fi
 fi
