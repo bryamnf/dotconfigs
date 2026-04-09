@@ -28,12 +28,13 @@ if  echo $- | grep -q "i"; then
 		fi
 	fi
 
-  #########nvm set up###########
-  if [ -d $HOME/.nvm ]; then
+  #########nvm and npm set up###########
+  if [ -d $HOME/.npm ] && [ -d $HOME/.nvm ]; then
     	export NVM_DIR="$HOME/.nvm"
     	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    	echo "[bashrc-log] nvm installed and sourced!"
+      eval "$(npm completion)" 
+    	echo "[bashrc-log] nvm and npm installed and sourced!"
   fi
 
 else
