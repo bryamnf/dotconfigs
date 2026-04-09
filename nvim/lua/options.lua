@@ -8,13 +8,6 @@ vim.o.number = true
 -- Clipboard
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
--- Add parser directory to runtimepath
-vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/parsers")
-
--- Enable built-in lua module caching
-vim.loader.enable()
-
-
 -- Set tab and indentation to 2 spaces
 vim.opt.tabstop = 4        -- Number of visual spaces per TAB
 vim.opt.softtabstop = 4    -- Number of spaces in tab when editing
