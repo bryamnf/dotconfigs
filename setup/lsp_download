@@ -1,4 +1,3 @@
 #!/bin/bash 
 pixi global install lua-language-server
 uv tool install basedpyright
-npm install -g @github/copilot-language-server
