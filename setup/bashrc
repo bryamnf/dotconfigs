@@ -28,14 +28,21 @@ if  echo $- | grep -q "i"; then
 		fi
 	fi
 
-  #########nvm and npm set up###########
-  if [ -d $HOME/.npm ] && [ -d $HOME/.nvm ]; then
-    	export NVM_DIR="$HOME/.nvm"
-    	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-      eval "$(npm completion)" 
-    	echo "[bashrc-log] nvm and npm installed and sourced!"
-  fi
+    #########nvm and npm set up###########
+    if [ -d $HOME/.npm ] && [ -d $HOME/.nvm ]; then
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        eval "$(npm completion)" 
+        echo "[bashrc-log] nvm and npm installed and sourced!"
+    fi
+
+    if [ -d $HOME/.cargo ]; then 
+        . "$HOME/.cargo/env"
+        eval "$(rustup completions bash)"
+        eval "$(rustup completions bash cargo)"
+        echo "[bashrc-log] cargo and rust installed and sourced!"
+    fi
 
 else
 ##########Non-interactive shell#############
@@ -44,15 +51,18 @@ else
 		export PATH="$HOME/.local/bin:$PATH"
 	fi
   
-  if [ -x "$HOME/.pixi/bin/pixi" ]; then
-	########Pixi set up############
-		export PATH="$HOME/.pixi/bin:$PATH"
-  fi
+    if [ -x "$HOME/.pixi/bin/pixi" ]; then
+      ########Pixi set up############
+      	export PATH="$HOME/.pixi/bin:$PATH"
+    fi
+      
+    if [ -d $HOME/.nvm ]; then
+    #########nvm set up###########
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    fi
 
-  if [ -d $HOME/.nvm ]; then
-  #########nvm set up###########
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  fi
-
+    if [ -d $HOME/.cargo ]; then 
+        . "$HOME/.cargo/env"
+    fi
 fi

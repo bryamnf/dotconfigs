@@ -32,3 +32,9 @@ else
       nvm install node
       nvm install-latest-npm
 fi
+
+if [ -d $HOME/.cargo ] && [ -d $HOME/.rustup ]; then 
+    echo "rustup and cargo already installed"
+else 
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
