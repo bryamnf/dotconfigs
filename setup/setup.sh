@@ -38,3 +38,14 @@ if [ -d $HOME/.cargo ] && [ -d $HOME/.rustup ]; then
 else 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
+
+if [ -d $HOME/.local/share/fonts ]; then
+    echo "local fonts available"
+else
+    mkdir -p $HOME/.local/share/fonts
+    cd $HOME/.local/share/fonts
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+    unzip JetBrainsMono.zip
+    fc-cache -fv
+    echo "Please select JetBrainsMono nerd-fonts in terminal emulator"
+fi 
