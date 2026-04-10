@@ -19,3 +19,9 @@ keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = t
 keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+
+-- Esc highlight mode
+keymap({ 'i', 'n', 'v' }, '<Esc>', function()
+  vim.cmd('nohlsearch')
+  return '<Esc>'
+end, { expr = true, desc = 'Escape and clear search highlight' })
