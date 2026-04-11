@@ -9,7 +9,7 @@ vim.o.number = true
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- LSP
-vim.lsp.log.set_level('trace')
+vim.lsp.log.set_level('warn')
 
 -- Set tab and indentation to 2 spaces
 vim.opt.tabstop = 4        -- Number of visual spaces per TAB
