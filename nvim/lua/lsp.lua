@@ -11,7 +11,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- ==========================================================================
     -- 1. DIRECT JUMPS (Point A -> Point B)
     -- ==========================================================================
-    
     if client:supports_method('textDocument/definition') then
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     end
@@ -21,11 +20,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     if client:supports_method('textDocument/typeDefinition') then
-      vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, opts)
+      vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
     end
 
     if client:supports_method('textDocument/implementation') then
-      vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     end
 
 
@@ -58,11 +57,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Symbols
     if client:supports_method('textDocument/documentSymbol') then
-      vim.keymap.set('n', '<leader>ds', vim.lsp.buf.document_symbol, opts)
+      vim.keymap.set('n', '<leader>s', vim.lsp.buf.document_symbol, opts)
     end
 
     if client:supports_method('workspace/symbol') then
-      vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
+      vim.keymap.set('n', '<leader>w', vim.lsp.buf.workspace_symbol, opts)
     end
 
     -- Hover & Signature Help
@@ -84,8 +83,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client:supports_method('textDocument/codeAction') then
       -- Normal and Visual mode
       vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-      -- Source Actions (usually a subset of code actions)
-      vim.keymap.set('n', '<leader>cA', vim.lsp.buf.code_action, opts)
     end
 
     -- Rename
@@ -95,19 +92,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Codelens
     if client:supports_method('textDocument/codelens') then
-      vim.keymap.set({ 'n', 'x' }, '<leader>cc', function()
+      vim.keymap.set({ 'n', 'x' }, '<leader>cl', function()
         vim.lsp.codelens.run()
       end, opts)
-      vim.keymap.set('n', '<leader>cC', function()
-        vim.lsp.codelens.refresh()
-      end, opts)
     end
-
-    -- Rename File (Note: This is typically a filesystem action, not a standard LSP method,
-    -- but we map it here for consistency with your table)
-    vim.keymap.set('n', '<leader>cR', function()
-        print("Rename File action triggered") 
-        -- If you have a plugin like 'oil.nvim' or 'nvim-tree', you would call it here.
-    end, opts)
+    
   end,
 })
