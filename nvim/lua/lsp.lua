@@ -1,4 +1,5 @@
 -- Create a group to prevent duplicate autocmds
+vim.keymap.set('n','<leader><leader>', function() vim.cmd('lsp enable') print("LSP enabled!") end)
 local lsp_group = vim.api.nvim_create_augroup('my.lsp_navigation', { clear = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -96,6 +97,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.codelens.run()
       end, opts)
     end
-    
   end,
 })
