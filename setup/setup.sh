@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 install_pkgs(){
-	pixi global install nvim uv
+	pixi global install nvim uv fzf ripgrep fd-find git-delta 
 }
 
 
