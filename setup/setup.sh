@@ -5,10 +5,11 @@ install_pkgs(){
 }
 
 
-echo "Creating symbolic links to bashrc, ibashrc, profile and nvim"
+echo "Creating symbolic links to bashrc, ibashrc, profile, gitconfig and nvim"
 ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
 ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
 ln -sf ~/dotconfigs/setup/profile ~/.profile
+ln -sf ~/dotconfigs/setup/gitconfig ~/.gitconfig
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
 
 if [ -x $HOME/.pixi/bin/pixi ]; then 
