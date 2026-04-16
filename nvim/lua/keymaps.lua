@@ -4,12 +4,6 @@ local opts = { noremap = true, silent = true }
 -- Explore
 keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
 
--- Cursor movements
-keymap({ 'n', 'v', 'o' }, "<leader>l", "$", opts)  -- End of line
-keymap({ 'n', 'v', 'o' }, "<leader>h", "^", opts)  -- Beginning of line
-keymap({ 'n', 'v', 'o' }, "<leader>k", "gg", opts) -- Top of file
-keymap({ 'n', 'v', 'o' }, "<leader>j", "G", opts)  -- Bottom of file
-
 -- Clipboard
 keymap('v', '<leader>y', '"+y')
 keymap({ 'n', 'v' }, '<leader>p', '"+p', opts)
@@ -25,3 +19,11 @@ keymap({ 'i', 'n', 'v' }, '<Esc>', function()
   vim.cmd('nohlsearch')
   return '<Esc>'
 end, { expr = true, desc = 'Escape and clear search highlight' })
+
+-- Enable lsp
+keymap('n','<leader>l', function() vim.cmd('lsp enable') print("LSP enabled!") end)
+
+-- Enable fzf
+vim.keymap.set("n","<leader><leader>", function()
+  vim.fn.feedkeys(":FzfLua ", "n")
+end, { desc = "FzfLua cmdline" })
