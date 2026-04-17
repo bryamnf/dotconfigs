@@ -14,6 +14,11 @@
       "src": "https://github.com/nvim-mini/mini.nvim",
       "version": "'stable'"
     },
+    "mini.pairs": {
+      "rev": "d5a29b6254dad07757832db505ea5aeab9aad43a",
+      "src": "https://github.com/nvim-mini/mini.pairs",
+      "version": "'stable'"
+    },
     "nvim": {
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim.git",
