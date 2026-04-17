@@ -21,9 +21,11 @@ keymap({ 'i', 'n', 'v' }, '<Esc>', function()
 end, { expr = true, desc = 'Escape and clear search highlight' })
 
 -- Enable lsp
-keymap('n','<leader>l', function() vim.cmd('lsp enable') print("LSP enabled!") end)
+keymap('n','<leader><leader>', function() vim.cmd('lsp enable') print("LSP enabled!") end)
 
 -- Enable fzf
-vim.keymap.set("n","<leader><leader>", function()
+keymap("n","<C-f>", function()
   vim.fn.feedkeys(":FzfLua ", "n")
 end, { desc = "FzfLua cmdline" })
+keymap("n","<leader>f", function() vim.cmd('FzfLua files')end)
+keymap("n","<leader>b", function() vim.cmd('FzfLua builtin')end)
