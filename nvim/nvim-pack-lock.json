@@ -6,8 +6,13 @@
       "version": "'v1'"
     },
     "fzf-lua": {
-      "rev": "5bf93b12f70c7cc89a2cc6ee026b82f111815be8",
+      "rev": "83f7195972538beee3a40932b38ccd86c8cc0f06",
       "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "harpoon": {
+      "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
     },
     "mini.nvim": {
       "rev": "a995fe9cd4193fb492b5df69175a351a74b3d36b",
@@ -32,6 +37,10 @@
     "nvim-treesitter-context": {
       "rev": "b0c45cefe2c8f7b55fc46f34e563bc428ef99636",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context.git"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
       "rev": "0fd43fb4b1f073931c4b481f5f3b7cea3749e190",
