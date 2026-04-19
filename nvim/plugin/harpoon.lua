@@ -40,6 +40,7 @@ end
 vim.keymap.set("n", "<leader>h", toggle_fzf_harpoon)
 
 
+vim.keymap.set("n", "<C-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 vim.keymap.set("n", "<C-a>", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-d>", function() harpoon:list():remove() end)
 
@@ -49,5 +50,5 @@ vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
+vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-n>", function() harpoon:list():next() end)
