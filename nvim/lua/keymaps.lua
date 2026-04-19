@@ -5,8 +5,8 @@ local opts = { noremap = true, silent = true }
 keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
 
 -- Clipboard
-keymap('v', '<leader>y', '"+y')
-keymap({ 'n', 'v' }, '<leader>p', '"+p', opts)
+keymap('v', '<C-c>', '"+y')
+keymap({ 'n', 'v' }, '<C-S-v>', '"+p', opts)
 
 -- better up/down
 keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
