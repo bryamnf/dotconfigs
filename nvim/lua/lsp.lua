@@ -57,11 +57,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Symbols
         if client:supports_method('textDocument/documentSymbol') then
-            vim.keymap.set('n', '<leader>s', vim.lsp.buf.document_symbol, opts)
+            vim.keymap.set('n', '<leader>ds', vim.lsp.buf.document_symbol, opts)
         end
 
         if client:supports_method('workspace/symbol') then
-            vim.keymap.set('n', '<leader>w', vim.lsp.buf.workspace_symbol, opts)
+            vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, opts)
         end
 
         -- Hover & Signature Help
