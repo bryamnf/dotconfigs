@@ -1,5 +1,5 @@
 #!/bin/bash 
-pixi global install lua-language-server
+pixi global install lua-language-server clang clang-tools
 uv tool install basedpyright
 uv tool install ruff
 uv tool install pylatexenc #markdown render pkg
