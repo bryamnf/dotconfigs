@@ -50,7 +50,12 @@ if echo $- | grep -q "i"; then
         . "$HOME/.cargo/env"
         eval "$(rustup completions bash)"
         eval "$(rustup completions bash cargo)"
-        _log_ok="$_log_ok rust/cargo!"
+        if [ -x "$HOME/.cargo/bin/zoxide" ]; then
+            eval "$(zoxide init bash --cmd cd)"
+            _log_ok="$_log_ok rust/cargo/zoxide!"
+        else
+            _log_ok="$_log_ok rust/cargo!"
+        fi
     else
         _log_warn="$_log_warn  [!] cargo/rust not found"
     fi
