@@ -14,7 +14,7 @@ require("toggleterm").setup({
 })
 
 -- Escape terminal mode easily
-vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
+vim.keymap.set("t", "fj", [[<C-\><C-n>]])
 
 
 local Terminal  = require('toggleterm.terminal').Terminal
