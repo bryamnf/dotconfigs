@@ -7,3 +7,4 @@ cargo install --locked tree-sitter-cli
 cargo install --locked zoxide
 npm install -g bash-language-server
 npm install -g libtexprintf #markdown render pkg
+npm install -g opencode-ai
