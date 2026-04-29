@@ -10,7 +10,6 @@ ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
 ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
 ln -sf ~/dotconfigs/setup/profile ~/.profile
 ln -sf ~/dotconfigs/setup/gitconfig ~/.gitconfig
-ln -sf ~/dotconfigs/setup/opencode.json ~/.config/opencode/opencode.json
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
 
 if [ -x $HOME/.pixi/bin/pixi ]; then 
@@ -51,3 +50,8 @@ else
     fc-cache -fv
     echo "Please select JetBrainsMono nerd-fonts in terminal emulator"
 fi 
+
+if [ ! -f $HOME/.config/opencode/opencode.json ]; then
+    mkdir -p $HOME/.config/opencode/
+    ln -sf ~/dotconfigs/setup/opencode.json ~/.config/opencode/opencode.json
+fi
