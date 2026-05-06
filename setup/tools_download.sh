@@ -8,3 +8,4 @@ cargo install --locked zoxide
 npm install -g bash-language-server
 npm install -g libtexprintf #markdown render pkg
 npm install -g opencode-ai
+npm install -g @vtsls/language-server
