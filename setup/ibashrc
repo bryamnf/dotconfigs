@@ -64,5 +64,9 @@ if ! shopt -oq posix; then
 fi
 # enable vim mode
 set -o vi
-export EDITOR=nvim
-export OPENCODE_EXPERIMENTAL=true
+export EDITOR=nvim #opencode
+export OPENCODE_EXPERIMENTAL=true #opencode
+
+export COPILOT_PROVIDER_BASE_URL=https://apphubai.wolke.uni-greifswald.de/v1
+export COPILOT_PROVIDER_TYPE=openai
+export COPILOT_MODEL=unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
