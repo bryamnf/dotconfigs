@@ -17,6 +17,14 @@ if echo $- | grep -q "i"; then
         _log_warn="$_log_warn [!] ~/.ibashrc not found"
     fi
 
+    #######sbashrc set up###########
+    if [ -f "$HOME/.sbashrc" ]; then
+        source "$HOME/.sbashrc"
+        _log_ok="$_log_ok sbashrc,"
+    else
+        _log_warn="$_log_warn [!] ~/.sbashrc not found"
+    fi
+
     ########Pixi set up############
     if [ -x "$HOME/.pixi/bin/pixi" ]; then
         export PATH="$HOME/.pixi/bin:$PATH"
