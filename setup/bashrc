@@ -53,6 +53,14 @@ if echo $- | grep -q "i"; then
         _log_warn="$_log_warn  [!] nvm/npm not found"
     fi
 
+    #########fzf set up###########
+    if [ -x $HOME/.pixi/bin/fzf ]; then 
+        eval "$(fzf --bash)"
+        _log_ok="$_log_ok fzf,"
+    else
+        _log_warn="$_log_warn  [!] fzf not configured"
+    fi
+
     #########cargo/rust set up###########
     if [ -d "$HOME/.cargo" ]; then
         . "$HOME/.cargo/env"
