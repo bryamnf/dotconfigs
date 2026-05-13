@@ -3,6 +3,7 @@ local opts = { noremap = true, silent = true }
 
 -- Explore
 keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
+keymap({ 'n', 'v' }, '<leader>v', ':Vexplore<CR>', opts)
 
 -- Clipboard
 keymap('v', '<C-c>', '"+y')
