@@ -4,7 +4,7 @@ vim.pack.add {
 
 -- In your toggleterm setup
 require("toggleterm").setup({
-    open_mapping = [[<c-\>]], -- toggle from anywhere (including insert/terminal mode)
+    open_mapping = [[<A-t>]], -- toggle from anywhere (including insert/terminal mode)
     direction = "tab",      -- or "horizontal" / "vertical"
     float_opts = { border = "curved" },
     shade_terminals = true,
@@ -13,19 +13,15 @@ require("toggleterm").setup({
     persist_mode = true,
 })
 
--- Escape terminal mode easily
-vim.keymap.set("t", "fj", [[<C-\><C-n>]])
-
-
 local Terminal = require('toggleterm.terminal').Terminal
 
 -- LAZYGIT SETUP
-local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true})
 function _lazygit_toggle()
     lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<C-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 
 -- OPENCODE SETUP
 local opencode = Terminal:new({ cmd = "opencode", hidden = true })
@@ -33,4 +29,4 @@ function _opencode_toggle()
     opencode:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<C-o>", "<cmd>lua _opencode_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-o>", "<cmd>lua _opencode_toggle()<CR>", { noremap = true, silent = true })
