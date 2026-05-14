@@ -17,17 +17,22 @@ keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = 
 
 -- Esc highlight mode
 keymap({ 'i', 'n', 'v' }, '<Esc>', function()
-  vim.cmd('nohlsearch')
-  return '<Esc>'
+    vim.cmd('nohlsearch')
+    return '<Esc>'
 end, { expr = true, desc = 'Escape and clear search highlight' })
 
 -- Enable lsp
-keymap('n','<leader><leader>', function() vim.cmd('lsp enable') print("LSP enabled!") end)
+keymap('n', '<leader><leader>', function()
+    vim.cmd('lsp enable')
+    print("LSP enabled!")
+end)
 
--- Enable fzf
-keymap("n","<C-f>", function()
-  vim.fn.feedkeys(":FzfLua ", "n")
-end, { desc = "FzfLua cmdline" })
-keymap("n","<leader>f", function() vim.cmd('FzfLua files')end)
-keymap("n","<leader>b", function() vim.cmd('FzfLua builtin')end)
-keymap("n","<leader>g", function() vim.cmd('FzfLua live_grep')end)
+-- FzfLua
+keymap("n", "<leader>f", function() vim.cmd('FzfLua files') end)
+keymap("n", "<leader>b", function() vim.cmd('FzfLua builtin') end)
+keymap("n", "<leader>g", function() vim.cmd('FzfLua live_grep') end)
+keymap("n", "<leader>d", function() vim.cmd('FzfLua diagnostics_document') end)
+keymap("n", "<leader>D", function() vim.cmd('FzfLua diagnostics_document') end)
+keymap("n", "<leader>l", function()
+    require("fzf-lua").builtin({ query = "lsp_" })
+end, { desc = "FzfLua builtin (lsp_ prefilled)" })
