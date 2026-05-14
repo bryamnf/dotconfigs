@@ -3,6 +3,18 @@ local opts = { noremap = true, silent = true }
 
 -- Explore
 keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
+-- In netrw, remap q to :qall!
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'netrw',
+  callback = function()
+    vim.keymap.set('n', 'q', '<cmd>qall!<cr>', {
+      buffer = true,
+      silent = true,
+      nowait = true,
+      desc = 'Quit all from netrw',
+    })
+  end,
+})
 keymap({ 'n', 'v' }, '<leader>v', ':Vexplore<CR>', opts)
 
 -- Clipboard
