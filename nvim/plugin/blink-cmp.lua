@@ -1,23 +1,28 @@
-vim.pack.add{
-  { src = 'https://github.com/saghen/blink.cmp', version = 'v1' },
+vim.pack.add {
+    { src = 'https://github.com/saghen/blink.cmp', version = 'v1' },
 }
 
 require('blink.cmp').setup({
-  keymap = { preset = 'super-tab' },
+    keymap = { preset = 'super-tab' },
 
-  appearance = {
-    nerd_font_variant = 'mono'
-  },
+    appearance = {
+        nerd_font_variant = 'mono'
+    },
 
-  completion = {
-    documentation = { auto_show = false }
-  },
+    completion = {
+        documentation = { auto_show = false }
+    },
 
-  sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
-  },
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
 
-  fuzzy = {
-    implementation = "prefer_rust_with_warning"
-  }
+    fuzzy = {
+        implementation = "prefer_rust_with_warning"
+    },
+
+    cmdline = {
+        keymap = { preset = 'inherit' },
+        completion = { menu = { auto_show = true } },
+    },
 })
