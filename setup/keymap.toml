@@ -1,0 +1,4 @@
+[mgr]
+prepend_keymap = [
+	{ on = "<C-o>", run = "shell --block --confirm 'nvim .'", desc = "Open current directory with neovim" },
+]
