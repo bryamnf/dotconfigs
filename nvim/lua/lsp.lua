@@ -27,17 +27,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         end
 
-
-        if client:supports_method('textDocument/references') then
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        end
-
         -- Reference Navigation (Quickfix list movement)
-        -- These allow you to jump through the results of 'gr'
+        -- These allow you to jump through the list of Reference
         vim.keymap.set('n', ']]', ':cnext<CR>', opts)
         vim.keymap.set('n', '[[', ':cprev<CR>', opts)
-        vim.keymap.set('n', '<A-n>', ':cnext<CR>', opts)
-        vim.keymap.set('n', '<A-p>', ':cprev<CR>', opts)
 
         -- Rename
         if client:supports_method('textDocument/rename') then
