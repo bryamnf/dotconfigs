@@ -62,3 +62,8 @@ if [ ! -f $HOME/.config/yazi/keymap.toml ]; then
     mkdir -p $HOME/.config/yazi/
     ln -sf ~/dotconfigs/setup/yazi_keymap.toml ~/.config/yazi/keymap.toml
 fi
+
+if [ ! -f $HOME/.config/ghostty/config.ghostty ]; then
+    mkdir -p $HOME/.config/ghostty/
+    ln -sf ~/dotconfigs/setup/config.ghostty ~/.config/ghostty/config.ghostty
+fi
