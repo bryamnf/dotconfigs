@@ -1,4 +1,6 @@
 [mgr]
 prepend_keymap = [
 	{ on = "<C-o>", run = "shell --block --confirm 'nvim .'", desc = "Open current directory with neovim" },
+   	{ on = "f",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	{ on = "<A-f>",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
 ]

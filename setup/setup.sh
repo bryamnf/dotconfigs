@@ -5,7 +5,7 @@ install_pkgs(){
 }
 
 
-echo "Creating symbolic links to bashrc, ibashrc, profile, gitconfig, opencode and nvim"
+echo "Creating symbolic links to bashrc, ibashrc, profile, gitconfig, opencode, yazi and nvim"
 ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
 ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
 ln -sf ~/dotconfigs/setup/profile ~/.profile
