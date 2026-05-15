@@ -1,4 +1,5 @@
 #!/bin/bash 
+#For yazi in ghostty in ubuntu: ghostty --working-directory=/home/user -e yazi, the path needs to be hardcoded
 
 install_pkgs(){
 	pixi global install nvim uv fzf ripgrep fd-find git-delta bat lazygit
