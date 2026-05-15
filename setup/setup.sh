@@ -10,7 +10,6 @@ ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
 ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
 ln -sf ~/dotconfigs/setup/profile ~/.profile
 ln -sf ~/dotconfigs/setup/gitconfig ~/.gitconfig
-ls -sf ~/dotconfigs/setup/keymap.toml ~/.config/yazi/keymap.toml
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
 
 if [ -x $HOME/.pixi/bin/pixi ]; then 
@@ -55,4 +54,10 @@ fi
 if [ ! -f $HOME/.config/opencode/opencode.json ]; then
     mkdir -p $HOME/.config/opencode/
     ln -sf ~/dotconfigs/setup/opencode.json ~/.config/opencode/opencode.json
+fi
+
+
+if [ ! -f $HOME/.config/yazi/keymap.toml ]; then
+    mkdir -p $HOME/.config/yazi/
+    ln -sf ~/dotconfigs/setup/yazi_keymap.toml ~/.config/yazi/keymap.toml
 fi
