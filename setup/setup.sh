@@ -11,7 +11,7 @@ if [ ! -d $HOME/.config/nvim ] && [ ! -d $HOME/.config/mise ]; then
     mkdir -p $HOME/.config/{mise,nvim}
 fi
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
-ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/mise
+ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/
 
 #############MISE-EN-PLACE##################
 if [ -x $HOME/.local/bin/mise ]; then 
@@ -20,13 +20,6 @@ else
 	echo "Installing mise"
 	curl https://mise.run | sh
 fi
-
-#if [ ! -f $HOME/.config/mise/config.toml ] && [ ! -f $HOME/.config/mise/mise.lock ]; then
-#    echo "Seting up mise"
-#    mkdir -p $HOME/.config/mise/
-#    ln -sfn ~/dotconfigs/mise ~/.config/mise
-#    mise trust ~/dotconfigs/setup/configs/mise/config.toml
-#fi
 
 #############FONTS##################
 if [ -d $HOME/.local/share/fonts ]; then
