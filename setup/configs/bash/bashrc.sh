@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Guard for interactive sessions
+[[ $- != *i* ]] && return
+
 ###### prompt colors #############
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 

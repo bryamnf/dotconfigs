@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #############DYNAMIC-LINKS##################
-ln -sf ~/dotconfigs/setup/configs/bash/profile.sh ~/.profile
 ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
