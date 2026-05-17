@@ -1,46 +1,34 @@
-#!/bin/bash 
-#For yazi in ghostty in ubuntu: ghostty --working-directory=/home/user -e yazi, the path needs to be hardcoded
+#!/bin/bash
 
-install_pkgs(){
-	pixi global install nvim uv fzf ripgrep fd-find git-delta bat lazygit
-}
+#############DYNAMIC-LINKS##################
+ln -sf ~/dotconfigs/setup/configs/bash/profile.sh ~/.profile
+ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
+ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
+ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
 
-
-echo "Creating symbolic links to bashrc, ibashrc, profile, gitconfig, opencode, yazi and nvim"
-ln -sf ~/dotconfigs/setup/bashrc ~/.bashrc
-ln -sf ~/dotconfigs/setup/ibashrc ~/.ibashrc
-ln -sf ~/dotconfigs/setup/profile ~/.profile
-ln -sf ~/dotconfigs/setup/gitconfig ~/.gitconfig
+if [ ! -d $HOME/.config/nvim ] && [ ! -d $HOME/.config/mise ]; then
+    echo "Seting up nvim and mise directories"
+    mkdir -p $HOME/.config/{mise,nvim}
+fi
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
+ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/mise
 
-if [ -x $HOME/.pixi/bin/pixi ]; then 
-	echo "Pixi already installed"
-	echo "Installing pkgs"
-	install_pkgs
+#############MISE-EN-PLACE##################
+if [ -x $HOME/.local/bin/mise ]; then 
+	echo "Mise already installed"
 else
-	echo "Installing pixi"
-	curl -fsSL https://pixi.sh/install.sh | sh
-	echo "Installing pkgs"
-	install_pkgs
+	echo "Installing mise"
+	curl https://mise.run | sh
 fi
 
-if [ -d $HOME/.nvm ] && [ -d $HOME/.npm ] ; then
-       echo "nvm and npm already installed"
-else
-      echo "Installing nvm"
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash      
-      export NVM_DIR="$HOME/.nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-      nvm install node
-      nvm install-latest-npm
-fi
+#if [ ! -f $HOME/.config/mise/config.toml ] && [ ! -f $HOME/.config/mise/mise.lock ]; then
+#    echo "Seting up mise"
+#    mkdir -p $HOME/.config/mise/
+#    ln -sfn ~/dotconfigs/mise ~/.config/mise
+#    mise trust ~/dotconfigs/setup/configs/mise/config.toml
+#fi
 
-if [ -d $HOME/.cargo ] && [ -d $HOME/.rustup ]; then 
-    echo "rustup and cargo already installed"
-else 
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-fi
-
+#############FONTS##################
 if [ -d $HOME/.local/share/fonts ]; then
     echo "local fonts available"
 else
@@ -52,18 +40,18 @@ else
     echo "Please select JetBrainsMono nerd-fonts in terminal emulator"
 fi 
 
+#############CLI TOOLS#############
 if [ ! -f $HOME/.config/opencode/opencode.json ]; then
     mkdir -p $HOME/.config/opencode/
-    ln -sf ~/dotconfigs/setup/opencode.json ~/.config/opencode/opencode.json
+    ln -sf ~/dotconfigs/setup/configs/opencode/opencode.json ~/.config/opencode/opencode.json
 fi
-
 
 if [ ! -f $HOME/.config/yazi/keymap.toml ]; then
     mkdir -p $HOME/.config/yazi/
-    ln -sf ~/dotconfigs/setup/yazi_keymap.toml ~/.config/yazi/keymap.toml
+    ln -sf ~/dotconfigs/setup/configs/yazi/yazi_keymap.toml ~/.config/yazi/keymap.toml
 fi
 
 if [ ! -f $HOME/.config/ghostty/config.ghostty ]; then
     mkdir -p $HOME/.config/ghostty/
-    ln -sf ~/dotconfigs/setup/config.ghostty ~/.config/ghostty/config.ghostty
+    ln -sf ~/dotconfigs/setup/configs/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
 fi
