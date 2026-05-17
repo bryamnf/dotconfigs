@@ -1,0 +1,27 @@
+[tools]
+"aqua:BurntSushi/ripgrep" = "latest"
+"aqua:astral-sh/uv" = "latest"
+"aqua:dandavison/delta" = "latest"
+"aqua:jesseduffield/lazygit" = "latest"
+"aqua:junegunn/fzf" = "latest"
+"aqua:neovim/neovim" = "latest"
+"aqua:sharkdp/bat" = "latest"
+"aqua:sharkdp/fd" = "latest"
+"aqua:sxyazi/yazi" = "latest"
+"aqua:zoxide" = "latest"
+clang = "latest"
+"conda:basedpyright" = "latest"
+"github:clangd/clangd" = "latest"
+lua-language-server = "latest"
+node = "latest"
+npm = "latest"
+"npm:@vtsls/language-server" = "latest"
+"npm:bash-language-server" = "latest"
+"npm:libtexprintf" = "latest"
+"npm:opencode-ai" = "latest"
+"npm:tree-sitter-cli" = "latest"
+"pipx:pylatexenc" = "latest"
+ruff = "latest"
+
+[settings]
+lockfile = true
