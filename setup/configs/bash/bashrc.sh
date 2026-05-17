@@ -29,6 +29,7 @@ fi
 ###### aliases ###################
 alias nv='nvim .'
 alias g='lazygit'
+alias cat='bat --paging=never'
 
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
