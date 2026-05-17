@@ -5,13 +5,10 @@ ln -sf ~/dotconfigs/setup/configs/bash/profile.sh ~/.profile
 ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
-
-if [ ! -d $HOME/.config/nvim ] && [ ! -d $HOME/.config/mise ]; then
-    echo "Seting up nvim and mise directories"
-    mkdir -p $HOME/.config/{mise,nvim}
-fi
-ln -sfn ~/dotconfigs/nvim ~/.config/nvim
-ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/mise
+# Dir setup
+[ ! -d $HOME/.config ] && mkdir $HOME/.config
+ln -sfn ~/dotconfigs/nvim ~/.config
+ln -sfn ~/dotconfigs/setup/configs/mise ~/.config
 
 #############MISE-EN-PLACE##################
 if [ -x $HOME/.local/bin/mise ]; then 
@@ -19,6 +16,8 @@ if [ -x $HOME/.local/bin/mise ]; then
 else
 	echo "Installing mise"
 	curl https://mise.run | sh
+    export PATH="$HOME/.local/bin:$PATH"
+    mise up
 fi
 
 #############FONTS##################
