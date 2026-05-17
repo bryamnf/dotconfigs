@@ -11,7 +11,7 @@ if [ ! -d $HOME/.config/nvim ] && [ ! -d $HOME/.config/mise ]; then
     mkdir -p $HOME/.config/{mise,nvim}
 fi
 ln -sfn ~/dotconfigs/nvim ~/.config/nvim
-ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/
+ln -sfn ~/dotconfigs/setup/configs/mise ~/.config/mise
 
 #############MISE-EN-PLACE##################
 if [ -x $HOME/.local/bin/mise ]; then 
