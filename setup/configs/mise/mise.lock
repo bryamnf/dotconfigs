@@ -2156,9 +2156,9 @@ checksum = "sha256:3d17b7aa90610afc65356e9e6149aeac0b2df19deda73a51f0a09cf04fd89
 url = "https://conda.anaconda.org/conda-forge/linux-64/libusb-1.0.29-h73b1eb8_0.conda"
 checksum = "sha256:89c84f5b26028a9d0f5c4014330703e7dff73ba0c98f90103e9cef6b43a5323c"
 
-[conda-packages.linux-x64."libuuid-2.42-h5347b49_0"]
-url = "https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.42-h5347b49_0.conda"
-checksum = "sha256:bc1b08c92626c91500fd9f26f2c797f3eb153b627d53e9c13cd167f1e12b2829"
+[conda-packages.linux-x64."libuuid-2.42.1-h5347b49_0"]
+url = "https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.42.1-h5347b49_0.conda"
+checksum = "sha256:3f0edf1280e2f6684a986f821eaa3e123d2694a00b31b96ca0d4a4c12c129231"
 
 [conda-packages.linux-x64."libuv-1.51.0-hb03c661_1"]
 url = "https://conda.anaconda.org/conda-forge/linux-64/libuv-1.51.0-hb03c661_1.conda"
@@ -2412,9 +2412,9 @@ checksum = "sha256:79c60fc6acfd3d713d6340d3b4e296836a0f8c51602327b32794625826bd0
 url = "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxfixes-6.0.2-hb03c661_0.conda"
 checksum = "sha256:83c4c99d60b8784a611351220452a0a85b080668188dce5dfa394b723d7b64f4"
 
-[conda-packages.linux-x64."xorg-libxi-1.8.2-hb9d3cd8_0"]
-url = "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxi-1.8.2-hb9d3cd8_0.conda"
-checksum = "sha256:1a724b47d98d7880f26da40e45f01728e7638e6ec69f35a3e11f92acd05f9e7a"
+[conda-packages.linux-x64."xorg-libxi-1.8.3-hb03c661_0"]
+url = "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxi-1.8.3-hb03c661_0.conda"
+checksum = "sha256:495f99c8eacfa4ae2d8fed2a7f2105777af89acdc204df145d2bbbc380ac631b"
 
 [conda-packages.linux-x64."xorg-libxinerama-1.1.6-hecca717_0"]
 url = "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxinerama-1.1.6-hecca717_0.conda"
@@ -4305,7 +4305,6 @@ conda_deps = [
     "readline-8.3-h853b02a_0",
     "python_abi-3.14-8_cp314",
     "libzlib-1.3.2-h25fd6f3_2",
-    "libuuid-2.42-h5347b49_0",
     "nodejs-25.8.2-he4ff34a_0",
     "libabseil-20260107.1-cxx17_h7b12aa8_0",
     "icu-78.3-h33c6efd_0",
@@ -4321,6 +4320,7 @@ conda_deps = [
     "liblzma-5.8.3-hb03c661_0",
     "libmpdec-4.0.0-hb03c661_1",
     "libsqlite-3.53.1-h0c1763c_0",
+    "libuuid-2.42.1-h5347b49_0",
     "ncurses-6.6-hdb14827_0",
     "openssl-3.6.2-h35e630c_0",
     "tk-8.6.13-noxft_h366c992_103",
@@ -4624,7 +4624,7 @@ conda_deps = [
     "pixman-0.46.4-h54a6638_1",
     "xorg-libx11-1.8.13-he1eb515_0",
     "xorg-libxext-1.3.7-hb03c661_0",
-    "libuuid-2.42-h5347b49_0",
+    "libuuid-2.42.1-h5347b49_0",
     "fonts-conda-forge-1-hc364b38_1",
     "font-ttf-dejavu-sans-mono-2.37-hab24e00_0",
     "libssh2-1.11.1-hcf80075_0",
@@ -4636,7 +4636,8 @@ conda_deps = [
     "lerc-4.1.0-hdb68285_0",
     "liblzma-5.8.3-hb03c661_0",
     "libsqlite-3.53.1-h0c1763c_0",
-    "xorg-libxi-1.8.2-hb9d3cd8_0",
+    "xorg-libxi-1.8.3-hb03c661_0",
+    "xorg-libxfixes-6.0.2-hb03c661_0",
     "pthread-stubs-0.4-hb9d3cd8_1002",
     "xorg-libxau-1.0.12-hb03c661_1",
     "xorg-libxdmcp-1.1.5-hb03c661_1",
@@ -4647,7 +4648,6 @@ conda_deps = [
     "libgcc-ng-15.2.0-h69a702a_19",
     "ca-certificates-2026.4.22-hbd8a1cb_0",
     "bzip2-1.0.8-hda65f42_9",
-    "xorg-libxfixes-6.0.2-hb03c661_0",
     "ncurses-6.6-hdb14827_0",
 ]
 
@@ -5105,7 +5105,7 @@ conda_deps = [
     "pulseaudio-client-17.0-h9a6aba3_3",
     "x264-1!164.3095-h166bdaf_2",
     "x265-3.5-h924138e_3",
-    "libuuid-2.42-h5347b49_0",
+    "libuuid-2.42.1-h5347b49_0",
     "fonts-conda-forge-1-hc364b38_1",
     "font-ttf-dejavu-sans-mono-2.37-hab24e00_0",
     "graphite2-1.3.14-hecca717_2",
@@ -5150,7 +5150,6 @@ conda_deps = [
     "libxkbcommon-1.13.1-hca5e8e5_0",
     "xorg-libxscrnsaver-1.2.4-hb9d3cd8_0",
     "liburing-2.14-hb700be7_0",
-    "xorg-libxi-1.8.2-hb9d3cd8_0",
     "libusb-1.0.29-h73b1eb8_0",
     "xorg-libxcursor-1.2.3-hb9d3cd8_0",
     "libunwind-1.8.3-h65a8314_0",
@@ -5168,6 +5167,7 @@ conda_deps = [
     "libcap-2.77-hd0affe5_1",
     "xorg-libxtst-1.2.5-hb9d3cd8_3",
     "libudev1-260.1-h6569c3e_0",
+    "xorg-libxi-1.8.3-hb03c661_0",
     "lerc-4.1.0-hdb68285_0",
     "zstd-1.5.7-hb78ec9c_6",
     "xkeyboard-config-2.47-hb03c661_0",
@@ -5725,7 +5725,7 @@ conda_deps = [
     "libgfortran-15.2.0-h69a702a_19",
     "libgfortran5-15.2.0-h68bc16d_19",
     "libexpat-2.8.0-hecca717_0",
-    "libuuid-2.42-h5347b49_0",
+    "libuuid-2.42.1-h5347b49_0",
     "font-ttf-ubuntu-0.83-h77eed37_3",
     "font-ttf-inconsolata-3.000-h77eed37_0",
     "font-ttf-source-code-pro-2.038-h77eed37_0",
@@ -5734,7 +5734,6 @@ conda_deps = [
     "gtk3-3.24.52-ha5ea40c_0",
     "xorg-libxrandr-1.5.5-hb03c661_0",
     "xorg-libxinerama-1.1.6-hecca717_0",
-    "xorg-libxi-1.8.2-hb9d3cd8_0",
     "xorg-libxfixes-6.0.2-hb03c661_0",
     "xorg-libxdamage-1.1.6-hb9d3cd8_0",
     "xorg-libxcursor-1.2.3-hb9d3cd8_0",
@@ -5763,6 +5762,7 @@ conda_deps = [
     "krb5-1.22.2-ha1258a1_0",
     "libedit-3.1.20250104-pl5321h7949ede_0",
     "keyutils-1.6.3-hb9d3cd8_0",
+    "xorg-libxi-1.8.3-hb03c661_0",
     "graphite2-1.3.14-hecca717_2",
     "pthread-stubs-0.4-hb9d3cd8_1002",
     "xorg-libxau-1.0.12-hb03c661_1",
