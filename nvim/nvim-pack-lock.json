@@ -10,7 +10,7 @@
       "src": "https://github.com/folke/flash.nvim"
     },
     "fzf-lua": {
-      "rev": "23f71140754b9162551dc8ccc1d6346e4275ecc2",
+      "rev": "ca139b8fec043057038c69ce2b34cf4b8b83746e",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "harpoon": {
@@ -47,7 +47,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context.git"
     },
     "nvim-web-devicons": {
-      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
+      "rev": "7d8dad2c837fcdf2e65997e68657c1a21c568074",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
