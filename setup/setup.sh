@@ -18,6 +18,7 @@ else
 	curl https://mise.run | sh
     export PATH="$HOME/.local/bin:$PATH"
     mise up
+    mise trust $HOME/dotconfigs/setup/configs/mise/config.toml
 fi
 
 #############FONTS##################
