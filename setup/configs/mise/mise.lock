@@ -992,13 +992,25 @@ checksum = "sha256:3005729dce6f3d3f5ec91dfc49fc75a0095f9cd23bab49efb899657297ac9
 url = "https://conda.anaconda.org/conda-forge/win-64/vc-14.3-h41ae7f8_36.conda"
 checksum = "sha256:7c86d8ed3ac473c3e4dde0dd05aeb1f3189a26ad66c0e250f6cf4018e73358f2"
 
+[conda-packages.windows-x64."vc-14.5-h1b7c187_36"]
+url = "https://conda.anaconda.org/conda-forge/win-64/vc-14.5-h1b7c187_36.conda"
+checksum = "sha256:dbcbad366e38979ac8ca9efb0ec48e5fedf9ce76f9485120c131cab7315c681c"
+
 [conda-packages.windows-x64."vc14_runtime-14.44.35208-h818238b_36"]
 url = "https://conda.anaconda.org/conda-forge/win-64/vc14_runtime-14.44.35208-h818238b_36.conda"
 checksum = "sha256:902984f2282859a76d764d80d74f873df7c7749117cfac15c5106e086fb2b772"
 
+[conda-packages.windows-x64."vc14_runtime-14.51.36231-h1b9f54f_36"]
+url = "https://conda.anaconda.org/conda-forge/win-64/vc14_runtime-14.51.36231-h1b9f54f_36.conda"
+checksum = "sha256:e6f48954124c4f9419e50b3de7cb4b88f3a6078bf3616e997ea60144d499aa30"
+
 [conda-packages.windows-x64."vcomp14-14.44.35208-h818238b_36"]
 url = "https://conda.anaconda.org/conda-forge/win-64/vcomp14-14.44.35208-h818238b_36.conda"
 checksum = "sha256:0cd5b905ab2b5e9fcb170fe8801b64917effef8e3a73ffd9b2cc4c3ee387f09c"
+
+[conda-packages.windows-x64."vcomp14-14.51.36231-h1b9f54f_36"]
+url = "https://conda.anaconda.org/conda-forge/win-64/vcomp14-14.51.36231-h1b9f54f_36.conda"
+checksum = "sha256:bba3bcaf805eefd0aa14beb3d08a34a81d5d36e6890bd6ce33fcb968429a3bc7"
 
 [conda-packages.windows-x64."zstd-1.5.7-h534d264_6"]
 url = "https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_6.conda"
@@ -1470,12 +1482,12 @@ conda_deps = [
 ]
 
 [[tools."conda:basedpyright"]]
-version = "1.39.4"
+version = "1.39.5"
 backend = "conda:basedpyright"
 
 [tools."conda:basedpyright"."platforms.linux-arm64"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.14.4-hfd9ac0a_100_cp314",
     "readline-8.3-hb682ff5_0",
@@ -1514,8 +1526,8 @@ conda_deps = [
 ]
 
 [tools."conda:basedpyright"."platforms.linux-arm64-musl"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.14.4-hfd9ac0a_100_cp314",
     "readline-8.3-hb682ff5_0",
@@ -1554,8 +1566,8 @@ conda_deps = [
 ]
 
 [tools."conda:basedpyright"."platforms.linux-x64"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.14.4-habeac84_100_cp314",
     "readline-8.3-h853b02a_0",
@@ -1594,8 +1606,8 @@ conda_deps = [
 ]
 
 [tools."conda:basedpyright"."platforms.linux-x64-musl"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.14.4-habeac84_100_cp314",
     "readline-8.3-h853b02a_0",
@@ -1634,8 +1646,8 @@ conda_deps = [
 ]
 
 [tools."conda:basedpyright"."platforms.macos-arm64"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.12.2-hdf0ec26_0_cpython",
     "xz-5.2.6-h57fd34a_0",
@@ -1659,8 +1671,8 @@ conda_deps = [
 ]
 
 [tools."conda:basedpyright"."platforms.windows-x64"]
-checksum = "sha256:6b6700770f9798443ad72313bffb5243d98cb8adc1c447a945bd9d2cc8be0f92"
-url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.4-pyhcf101f3_0.conda"
+checksum = "sha256:90fe6cd4bafcecbb2ed1a0d326f0200acc148b3a894aa924009b1d6468cb6def"
+url = "https://conda.anaconda.org/conda-forge/noarch/basedpyright-1.39.5-pyhcf101f3_0.conda"
 conda_deps = [
     "python-3.14.4-h4b44e0e_100_cp314",
     "python_abi-3.14-8_cp314",
@@ -1677,9 +1689,9 @@ conda_deps = [
     "tk-8.6.13-h6ed50ae_3",
     "tzdata-2025c-hc9c84f9_1",
     "ucrt-10.0.26100.0-h57928b3_0",
-    "vc-14.3-h41ae7f8_36",
-    "vc14_runtime-14.44.35208-h818238b_36",
-    "vcomp14-14.44.35208-h818238b_36",
+    "vc-14.5-h1b7c187_36",
+    "vc14_runtime-14.51.36231-h1b9f54f_36",
+    "vcomp14-14.51.36231-h1b9f54f_36",
     "zstd-1.5.7-h534d264_6",
     "ca-certificates-2026.4.22-h4c7d964_0",
 ]
@@ -1692,43 +1704,36 @@ backend = "github:clangd/clangd"
 checksum = "sha256:c54e57dbff3ccc9e8352367ddb7030ad3f624073ec58c7477424e7919f578572"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-linux-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364559011"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.linux-arm64-musl"]
 checksum = "sha256:c54e57dbff3ccc9e8352367ddb7030ad3f624073ec58c7477424e7919f578572"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-linux-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364559011"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.linux-x64"]
 checksum = "sha256:c54e57dbff3ccc9e8352367ddb7030ad3f624073ec58c7477424e7919f578572"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-linux-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364559011"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.linux-x64-musl"]
 checksum = "sha256:c54e57dbff3ccc9e8352367ddb7030ad3f624073ec58c7477424e7919f578572"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-linux-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364559011"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.macos-arm64"]
 checksum = "sha256:71eddc5303da9a5bc5e8b509488b5b2c5acf45f20e33b8394e71a12a56d67198"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-mac-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364563505"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.macos-x64"]
 checksum = "sha256:71eddc5303da9a5bc5e8b509488b5b2c5acf45f20e33b8394e71a12a56d67198"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-mac-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364563505"
-github_attestations = "unavailable"
 
 [tools."github:clangd/clangd"."platforms.windows-x64"]
 checksum = "sha256:e31e271fe11f6dcd7cf87ca74be4a12788ff8ce5a0b07762583e335c058e939a"
 url = "https://github.com/clangd/clangd/releases/download/22.1.0/clangd-windows-22.1.0.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/364575158"
-github_attestations = "unavailable"
 
 [[tools.lua-language-server]]
 version = "3.18.2"
@@ -1805,6 +1810,7 @@ url = "https://registry.npmjs.org/npm/-/npm-11.14.1.tgz"
 url = "https://registry.npmjs.org/npm/-/npm-11.14.1.tgz"
 
 [tools.npm."platforms.linux-x64"]
+checksum = "blake3:a8de705e3d92c2cf36caf4d5f6476118996416e8761d14b58f78b257ee0d2e82"
 url = "https://registry.npmjs.org/npm/-/npm-11.14.1.tgz"
 
 [tools.npm."platforms.linux-x64-musl"]
@@ -1832,7 +1838,7 @@ version = "1.31.0"
 backend = "npm:libtexprintf"
 
 [[tools."npm:opencode-ai"]]
-version = "1.15.0"
+version = "1.15.4"
 backend = "npm:opencode-ai"
 
 [[tools."npm:tree-sitter-cli"]]
@@ -1860,6 +1866,7 @@ provenance = "github-attestations"
 [tools.ruff."platforms.linux-x64"]
 checksum = "sha256:66ac0b0582c8d24badc210b8e933e9aa0ad6707414e236409c9b9ad638972fb9"
 url = "https://github.com/astral-sh/ruff/releases/download/0.15.13/ruff-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.ruff."platforms.linux-x64-musl"]
 checksum = "sha256:66ac0b0582c8d24badc210b8e933e9aa0ad6707414e236409c9b9ad638972fb9"
