@@ -8,6 +8,7 @@ ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
 ln -sfn ~/dotconfigs/nvim ~/.config
 ln -sfn ~/dotconfigs/setup/configs/mise ~/.config
+ln -sfn ~/dotconfigs/setup/configs/ghostty ~/.config
 
 #############MISE-EN-PLACE##################
 if [ -x $HOME/.local/bin/mise ]; then 
