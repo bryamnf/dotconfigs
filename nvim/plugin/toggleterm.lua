@@ -22,11 +22,3 @@ function _lazygit_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<A-g>", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-
--- OPENCODE SETUP
-local opencode = Terminal:new({ cmd = "opencode", hidden = true })
-function _opencode_toggle()
-    opencode:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<A-o>", "<cmd>lua _opencode_toggle()<CR>", { noremap = true, silent = true })
