@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 keymap({ 'n', 'v' }, '<leader>v', ':Vexplore<CR>', opts)
-keymap({ 'n', 'v' }, 'H', '0', opts)
+keymap({ 'n', 'v' }, 'H', '^', opts)
 keymap({ 'n', 'v' }, 'J', 'G', opts)
 keymap({ 'n', 'v' }, 'K', 'gg', opts)
 keymap({ 'n', 'v' }, 'L', '$', opts)
