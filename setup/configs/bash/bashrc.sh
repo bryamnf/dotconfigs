@@ -31,7 +31,7 @@ alias nv='nvim .'
 alias g='lazygit'
 alias cat='bat --paging=never'
 alias ll='eza --icons=always -1agl'
-alias ls='eza --icons=always -1'
+alias ls='eza --icons=always'
 alias lt='eza --icons=always -1aglT'
 
 ####### sbashrc set up ###########
