@@ -30,6 +30,9 @@ fi
 alias nv='nvim .'
 alias g='lazygit'
 alias cat='bat --paging=never'
+alias ll='eza --icons=always -1agl'
+alias ls='eza --icons=always -1'
+alias lt='eza --icons=always -1aglT'
 
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
@@ -46,3 +49,4 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
+

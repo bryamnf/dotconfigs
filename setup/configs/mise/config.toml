@@ -2,6 +2,7 @@
 "aqua:BurntSushi/ripgrep" = "latest"
 "aqua:astral-sh/uv" = "latest"
 "aqua:dandavison/delta" = "latest"
+"aqua:eza" = "latest"
 "aqua:ip7z/7zip" = "latest"
 "aqua:jesseduffield/lazygit" = "latest"
 "aqua:junegunn/fzf" = "latest"
