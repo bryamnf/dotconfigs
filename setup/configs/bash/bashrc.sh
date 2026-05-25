@@ -34,6 +34,30 @@ alias ll='eza --icons=always -1agl'
 alias ls='eza --icons=always'
 alias lt='eza --icons=always -1aglT'
 
+####### fzf ######################
+export FZF_DEFAULT_COMMAND='fd --type f'
+ff() {
+    fd --type f | fzf --style full \
+        --border --padding 1,2 \
+        --border-label 'Fuzzy Finder' --input-label ' Input ' --header-label ' File Type ' \
+        --preview "$HOME/dotconfigs/setup/configs/fzf/fzf-preview.sh {}" \
+        --bind 'result:transform-list-label:
+            if [[ -z $FZF_QUERY ]]; then
+              echo " $FZF_MATCH_COUNT items "
+            else
+              echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+            fi
+            ' \
+        --bind 'focus:transform-preview-label:[[ -n {} ]] && printf " Previewing [%s] " {}' \
+        --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
+        --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; fd --type f)' \
+        --color 'border:#aaaaaa,label:#cccccc' \
+        --color 'preview-border:#9999cc,preview-label:#ccccff' \
+        --color 'list-border:#669966,list-label:#99cc99' \
+        --color 'input-border:#996666,input-label:#ffcccc' \
+        --color 'header-border:#6699cc,header-label:#99ccff' \
+        --multi --bind 'enter:become(nvim {+})'
+}
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
     source "$HOME/.sbashrc"
