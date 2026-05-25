@@ -26,6 +26,7 @@ npm = "latest"
 "npm:opencode-ai" = "latest"
 "npm:tree-sitter-cli" = "latest"
 "pipx:pylatexenc" = "latest"
+pixi = "latest"
 resvg = "latest"
 ruff = "latest"
 

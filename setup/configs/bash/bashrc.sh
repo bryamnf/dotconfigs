@@ -50,3 +50,6 @@ function y() {
 	command rm -f -- "$tmp"
 }
 
+####### pixi #####################
+export PATH="/home/bryam-n-ez/.pixi/bin:$PATH"
+
