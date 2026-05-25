@@ -35,8 +35,9 @@ fi
 
 #############CLI TOOLS#############
 if [ ! -f $HOME/.config/opencode/opencode.json ]; then
-    mkdir -p $HOME/.config/opencode/
+    mkdir -p $HOME/.config/opencode/agents
     ln -sf ~/dotconfigs/setup/configs/opencode/opencode.json ~/.config/opencode/opencode.json
+    ln -sfn ~/dotconfigs/setup/configs/opencode/agents ~/.config/opencode/agents
 fi
 
 if [ ! -f $HOME/.config/yazi/keymap.toml ]; then
