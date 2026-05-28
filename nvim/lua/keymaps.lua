@@ -5,21 +5,17 @@ local opts = { noremap = true, silent = true }
 keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
 -- In netrw, remap q to :qall!
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'netrw',
-  callback = function()
-    vim.keymap.set('n', 'q', '<cmd>qall!<cr>', {
-      buffer = true,
-      silent = true,
-      nowait = true,
-      desc = 'Quit all from netrw',
-    })
-  end,
+    pattern = 'netrw',
+    callback = function()
+        vim.keymap.set('n', 'q', '<cmd>qall!<cr>', {
+            buffer = true,
+            silent = true,
+            nowait = true,
+            desc = 'Quit all from netrw',
+        })
+    end,
 })
 keymap({ 'n', 'v' }, '<leader>v', ':Vexplore<CR>', opts)
-keymap({ 'n', 'v' }, 'H', '^', opts)
-keymap({ 'n', 'v' }, 'J', 'G', opts)
-keymap({ 'n', 'v' }, 'K', 'gg', opts)
-keymap({ 'n', 'v' }, 'L', '$', opts)
 
 -- Clipboard
 keymap('v', '<C-c>', '"+y')
@@ -45,10 +41,9 @@ end)
 
 -- FzfLua
 keymap("n", "<leader>f", function() vim.cmd('FzfLua files') end)
-keymap("n", "<leader>b", function() vim.cmd('FzfLua builtin') end)
+keymap("n", "<C-b>", function() vim.cmd('FzfLua builtin') end)
 keymap("n", "<leader>g", function() vim.cmd('FzfLua live_grep') end)
-keymap("n", "<leader>d", function() vim.cmd('FzfLua diagnostics_document') end)
-keymap("n", "<leader>D", function() vim.cmd('FzfLua diagnostics_document') end)
-keymap("n", "<leader>l", function()
+keymap("n", "<C-i>", function() vim.cmd('FzfLua diagnostics_document') end)
+keymap("n", "<C-l>", function()
     require("fzf-lua").builtin({ query = "lsp_" })
 end, { desc = "FzfLua builtin (lsp_ prefilled)" })
