@@ -35,6 +35,7 @@ alias ls='eza --icons=always'
 alias lt='eza --icons=always -1aglT'
 
 ####### fzf ######################
+eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND='fd --type f'
 ff() {
     fd --type f | fzf --style full \
