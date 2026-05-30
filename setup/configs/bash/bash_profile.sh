@@ -10,7 +10,7 @@ else
     echo "[W] mise-en-place not found!"
 fi
 
-function l() {
+function s() {
     if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
     else
