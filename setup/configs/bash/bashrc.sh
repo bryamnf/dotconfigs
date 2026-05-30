@@ -37,10 +37,8 @@ alias lt='eza --icons=always -1aglT'
 ####### fzf ######################
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
-export FZF_CTRL_T_OPTS="--style default
---preview '$HOME/dotconfigs/setup/configs/fzf/fzf-preview.sh {}'
---border --padding 1,2 
+export FZF_DEFAULT_OPTS="
+--style default --layout=reverse --inline-info --border --padding 1,2
 --border-label 'Fuzzy Finder' --input-label ' Input ' --header-label ' File Type ' 
 --bind 'result:transform-list-label:
     if [[ -z \$FZF_QUERY ]]; then
@@ -49,22 +47,30 @@ export FZF_CTRL_T_OPTS="--style default
       echo \" \$FZF_MATCH_COUNT matches for [\$FZF_QUERY] \"
     fi
     ' 
---bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' 
---bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"'
---bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; fd --type f)' 
 --color 'border:#aaaaaa,label:#cccccc' 
 --color 'preview-border:#9999cc,preview-label:#ccccff' 
 --color 'list-border:#669966,list-label:#99cc99' 
 --color 'input-border:#996666,input-label:#ffcccc' 
 --color 'header-border:#6699cc,header-label:#99ccff'
 "
+export FZF_CTRL_T_OPTS="
+--preview '$HOME/dotconfigs/setup/configs/fzf/fzf-preview.sh {}'
+--bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; fd --type f)' 
+--bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' 
+--bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"'
+"
 ####### zoxide ###################
 eval "$(zoxide init bash)"
-function c() {
+function ct() {
   local dir
   dir=$(zoxide query -l |  fzf --preview 'eza --icons=always -1gT {}') 
-  [ -n "$dir" ] && z "$dir" && nvim .
+  [ -n "$dir" ] && z "$dir" 
  }
+export -f ct
+function co() {
+    ct && nvim .
+}
+
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
     source "$HOME/.sbashrc"
