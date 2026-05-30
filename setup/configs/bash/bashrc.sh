@@ -61,14 +61,14 @@ export FZF_CTRL_T_OPTS="
 "
 ####### zoxide ###################
 eval "$(zoxide init bash)"
-function c() {
+function ct() {
   local dir
   dir=$(zoxide query -l |  fzf --preview 'eza --icons=always -1gT {}') 
   [ -n "$dir" ] && z "$dir" 
  }
-export -f c
+export -f ct
 function co() {
-    c && nvim $(fzf) 
+    ct && nvim $(fzf) 
 }
 
 ####### sbashrc set up ###########
