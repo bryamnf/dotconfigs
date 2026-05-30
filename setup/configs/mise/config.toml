@@ -29,6 +29,7 @@ npm = "latest"
 pixi = "latest"
 resvg = "latest"
 ruff = "latest"
+tmux = "latest"
 
 [settings]
 lockfile = true
