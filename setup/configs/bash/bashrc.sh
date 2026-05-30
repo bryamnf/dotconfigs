@@ -36,7 +36,7 @@ alias lt='eza --icons=always -1aglT'
 
 ####### fzf ######################
 eval "$(fzf --bash)"
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --type f | sort -k2 -rn'
 export FZF_DEFAULT_OPTS="
 --style default --layout=reverse --inline-info --border --padding 1,2
 --border-label 'Fuzzy Finder' --input-label ' Input ' --header-label ' File Type ' 
@@ -61,14 +61,14 @@ export FZF_CTRL_T_OPTS="
 "
 ####### zoxide ###################
 eval "$(zoxide init bash)"
-function ct() {
+function c() {
   local dir
   dir=$(zoxide query -l |  fzf --preview 'eza --icons=always -1gT {}') 
   [ -n "$dir" ] && z "$dir" 
  }
-export -f ct
+export -f c
 function co() {
-    ct && nvim .
+    c && nvim $(fzf) 
 }
 
 ####### sbashrc set up ###########
