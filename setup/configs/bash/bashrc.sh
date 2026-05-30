@@ -58,6 +58,13 @@ export FZF_CTRL_T_OPTS="--style default
 --color 'input-border:#996666,input-label:#ffcccc' 
 --color 'header-border:#6699cc,header-label:#99ccff'
 "
+####### zoxide ###################
+eval "$(zoxide init bash)"
+function c() {
+  local dir
+  dir=$(zoxide query -l |  fzf --preview 'eza --icons=always -1gT {}') 
+  [ -n "$dir" ] && z "$dir" && nvim .
+ }
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
     source "$HOME/.sbashrc"
