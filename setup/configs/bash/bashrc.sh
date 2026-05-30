@@ -70,6 +70,8 @@ export -f ct
 function co() {
     ct && nvim $(fzf) 
 }
+####### ripgrep ##################
+rg() { command rg --json -C 2 "$@" | delta; }
 
 ####### sbashrc set up ###########
 if [ -f "$HOME/.sbashrc" ]; then
