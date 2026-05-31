@@ -1,20 +1,32 @@
 #!/bin/bash
 
-#############DYNAMIC-LINKS##################
+
+############# DYNAMIC-LINKS ##################
 ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
-# Dir setup
-[ ! -d $HOME/.config ] && mkdir $HOME/.config
-ln -sfn ~/dotconfigs/nvim ~/.config
-ln -sfn ~/dotconfigs/setup/configs/mise ~/.config
-ln -sfn ~/dotconfigs/setup/configs/ghostty ~/.config
 
-#############MISE-EN-PLACE##################
+############## Config setup #################
+configs=("mise" "tmux" "ghostty" "yazi" "opencode")
+path_to_configs="$HOME/dotconfigs/setup/configs"
+
+[ ! -d $HOME/.config ] && mkdir $HOME/.config
+
+for config in ${configs[@]}; do
+    if [ -d "$path_to_configs/$config" ]; then
+        echo "[I] link available for $config!"
+    else
+        echo "creating link for $config"
+        ln -sfn "$path_to_configs/$config" $HOME/.config
+        echo "[I] link created for $config!"
+    fi
+done
+
+#############MISE-EN-PLACE####################
 if [ -x $HOME/.local/bin/mise ]; then 
-	echo "Mise already installed"
+	echo "[I] Mise already installed!"
 else
-	echo "Installing mise"
+	echo "[I] Installing mise!"
 	curl https://mise.run | sh
     export PATH="$HOME/.local/bin:$PATH"
     mise up
@@ -23,7 +35,7 @@ fi
 
 #############FONTS##################
 if [ -d $HOME/.local/share/fonts ]; then
-    echo "local fonts available"
+    echo "[I] Local fonts available!"
 else
     mkdir -p $HOME/.local/share/fonts
     cd $HOME/.local/share/fonts
@@ -32,21 +44,3 @@ else
     fc-cache -fv
     echo "Please select JetBrainsMono nerd-fonts in terminal emulator"
 fi 
-
-#############CLI TOOLS#############
-if [ ! -f $HOME/.config/opencode/opencode.json ]; then
-    mkdir -p $HOME/.config/opencode/agents
-    ln -sf ~/dotconfigs/setup/configs/opencode/opencode.json ~/.config/opencode/opencode.json
-    ln -sfn ~/dotconfigs/setup/configs/opencode/agents ~/.config/opencode
-
-fi
-
-if [ ! -f $HOME/.config/yazi/keymap.toml ]; then
-    mkdir -p $HOME/.config/yazi/
-    ln -sf ~/dotconfigs/setup/configs/yazi/yazi_keymap.toml ~/.config/yazi/keymap.toml
-fi
-
-if [ ! -f $HOME/.config/ghostty/config.ghostty ]; then
-    mkdir -p $HOME/.config/ghostty/
-    ln -sf ~/dotconfigs/setup/configs/ghostty/config.ghostty ~/.config/ghostty/config.ghostty
-fi
