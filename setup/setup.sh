@@ -13,7 +13,7 @@ path_to_configs="$HOME/dotconfigs/setup/configs"
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
 
 for config in ${configs[@]}; do
-    if [ -d "$path_to_configs/$config" ]; then
+    if [ -d "$HOME/.config/$config" ]; then
         echo "[I] link available for $config!"
     else
         echo "creating link for $config"
