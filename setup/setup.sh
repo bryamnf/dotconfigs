@@ -7,7 +7,7 @@ ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
 
 ############## Config setup #################
-configs=("mise" "tmux" "ghostty" "yazi" "opencode")
+configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode")
 path_to_configs="$HOME/dotconfigs/setup/configs"
 
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
