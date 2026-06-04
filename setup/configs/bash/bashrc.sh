@@ -73,13 +73,6 @@ function co() {
 ####### ripgrep ##################
 rg() { command rg --json -C 1 "$@" | delta; }
 
-####### sbashrc set up ###########
-if [ -f "$HOME/.sbashrc" ]; then
-    source "$HOME/.sbashrc"
-else
-    echo "[!] ~/.sbashrc not found"
-fi
-
 ####### yazi #####################
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
