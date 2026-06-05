@@ -742,6 +742,10 @@ checksum = "sha256:b6c843fa84afb37af9d665a418324782ae18ea3dd1de775abfd7cf17f9431
 url = "https://github.com/astral-sh/ruff/releases/download/0.15.16/ruff-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
 
+[[tools.rust]]
+version = "1.96.0"
+backend = "core:rust"
+
 [[tools.tmux]]
 version = "3.6b"
 backend = "aqua:tmux/tmux-builds"
