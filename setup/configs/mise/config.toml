@@ -32,6 +32,7 @@ pixi = "0.69.0"
 resvg = "latest"
 ruff = "latest"
 tmux = "latest"
+usage = "latest"
 
 [settings]
 lockfile = true
