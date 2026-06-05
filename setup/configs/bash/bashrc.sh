@@ -13,6 +13,7 @@ export OPENCODE_EXPERIMENTAL=true
 
 ###### mise-en-place #############
 [ -x "$HOME/.local/bin/mise" ] && eval "$(mise activate bash)"
+eval "$(mise completions bash)"
 
 ###### enable vim mode ###########
 set -o vi
