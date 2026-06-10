@@ -2,12 +2,12 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Explore
-keymap({ 'n', 'v' }, 'q', ':Ex<CR>', opts)
+keymap({ 'n', 'v' }, '<leader>q', ':Ex<CR>', opts)
 -- In netrw, remap q to :qall!
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'netrw',
     callback = function()
-        vim.keymap.set('n', 'q', '<cmd>qall!<cr>', {
+        vim.keymap.set('n', '<leader>q', '<cmd>qall!<cr>', {
             buffer = true,
             silent = true,
             nowait = true,
