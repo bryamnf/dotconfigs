@@ -1,6 +1,6 @@
 theme = Catppuccin Frappe
 background-opacity = 0.7
-shell-integration-features = ssh-env,ssh-terminfo
+shell-integration = bash
 shell-integration-features = sudo
 keybind = ctrl+b>h=new_split:left
 keybind = ctrl+b>j=new_split:down
