@@ -2,6 +2,7 @@ theme = Catppuccin Frappe
 background-opacity = 0.7
 shell-integration = bash
 shell-integration-features = sudo
+keybind = ctrl+]=text:clear\r
 keybind = ctrl+b>h=new_split:left
 keybind = ctrl+b>j=new_split:down
 keybind = ctrl+b>k=new_split:up
