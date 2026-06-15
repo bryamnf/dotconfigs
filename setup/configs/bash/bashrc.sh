@@ -34,6 +34,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+###### bash_secrets ##############
+if [ -f $HOME/.bash_secrets.sh ]; then
+    source $HOME/.bash_secrets.sh
+else
+    echo "[W] bash_secrets not found!"
+fi
 ###### aliases ###################
 alias nv='nvim .'
 alias g='lazygit'
