@@ -4,6 +4,7 @@
 ############# DYNAMIC-LINKS ##################
 ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
+cp ~/dotconfigs/setup/configs/bash/bash_secrets.sh ~/.bash_secrets.sh
 ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
 
 ############## Config setup #################
