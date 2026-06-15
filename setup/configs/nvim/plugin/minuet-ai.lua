@@ -7,7 +7,6 @@ require('minuet').setup {
         notity = "debug",
         auto_trigger_ft = {},
         keymap = {
-            
             -- accept whole completion
             accept = '<A-A>',
             -- accept one line
@@ -40,5 +39,8 @@ require('minuet').setup {
             stream = true,
         },
     },
-    
 }
+
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+keymap({ 'n', 'v' }, '<leader>m', ':Minuet virtualtext toggle <CR>', opts)

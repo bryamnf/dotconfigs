@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd('FileType', {
         })
     end,
 })
+-- Vexplore
 keymap({ 'n', 'v' }, '<leader>v', ':Vexplore<CR>', opts)
 
 -- Clipboard
