@@ -42,11 +42,15 @@ else
 fi
 ###### aliases ###################
 alias nv='nvim .'
+alias n='nvim '
 alias g='lazygit'
 alias cat='bat --paging=never'
 alias ll='eza --icons=always -1agl'
 alias ls='eza --icons=always'
 alias lt='eza --icons=always -1aglT'
+
+###### keybindings ###############
+bind -x '"\C-l": clear'
 
 ####### fzf ######################
 eval "$(fzf --bash)"
