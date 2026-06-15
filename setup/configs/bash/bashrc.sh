@@ -18,6 +18,13 @@ eval "$(mise completions bash --include-bash-completion-lib )"
 ###### enable vim mode ###########
 set -o vi
 
+###### enable history append #####
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTCONTROL=ignoreboth
+
 ###### Completions ###############
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
