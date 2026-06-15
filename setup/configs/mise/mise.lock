@@ -367,17 +367,29 @@ url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.9.9/zoxide-0.9
 version = "22.1.7"
 backend = "conda:clang"
 
+[tools.clang.options]
+channel = "conda-forge"
+
 [[tools."conda:basedpyright"]]
 version = "1.39.6"
 backend = "conda:basedpyright"
+
+[tools."conda:basedpyright".options]
+channel = "conda-forge"
 
 [[tools."conda:poppler"]]
 version = "26.05.0"
 backend = "conda:poppler"
 
+[tools."conda:poppler".options]
+channel = "conda-forge"
+
 [[tools.ffmpeg]]
 version = "8.1.1"
 backend = "conda:ffmpeg"
+
+[tools.ffmpeg.options]
+channel = "conda-forge"
 
 [[tools.fzf]]
 version = "0.73.1"
@@ -489,6 +501,9 @@ backend = "go:github.com/tmuxpack/tpack/cmd/tpack"
 [[tools.imagemagick]]
 version = "7.1.2_25"
 backend = "conda:imagemagick"
+
+[tools.imagemagick.options]
+channel = "conda-forge"
 
 [[tools.lua-language-server]]
 version = "3.18.2"
