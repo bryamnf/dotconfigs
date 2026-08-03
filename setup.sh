@@ -1,11 +1,10 @@
 #!/bin/bash
 
-
 ############# DYNAMIC-LINKS ##################
 ln -sf ~/dotconfigs/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/configs/bash/bashrc.sh ~/.bashrc
-cp ~/dotconfigs/configs/bash/bash_secrets.sh ~/.bash_secrets.sh
 ln -sf ~/dotconfigs/configs/git/gitconfig ~/.gitconfig
+ln -sf ~/dotconfigs/configs/pi_agent/models.json ~/.pi/agent
 
 ############## Config setup #################
 configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode")
@@ -22,6 +21,8 @@ for config in ${configs[@]}; do
         echo "[I] link created for $config!"
     fi
 done
+
+[ ! -f $HOME/.bash_secrets.sh ] && cp ~/dotconfigs/configs/bash/bash_secrets.sh ~/.bash_secrets.sh
 
 #############MISE-EN-PLACE####################
 if [ -x $HOME/.local/bin/mise ]; then 
