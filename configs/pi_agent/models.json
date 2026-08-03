@@ -1,0 +1,14 @@
+{
+  "providers": {
+    "Apphub": {
+      "baseUrl": "https://apphubai.wolke.uni-greifswald.de/v1",
+      "api": "openai-completions",
+      "apiKey": "$APPHUBAI_API_KEY",
+      "models": [
+          {"id":"unsloth/gemma-4-31B-it-qat-GGUF:UD-Q4_K_XL"}, 
+          {"id":"unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M"},
+          {"id":"poolside/Laguna-S-2.1-GGUF"}
+      ]
+    }
+  }
+}
