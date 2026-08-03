@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "formatter": true,
+  "lsp": true,
+  "provider": {
+    "apphubai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Apphubai",
+      "options": {
+        "baseURL": "https://apphubai.wolke.uni-greifswald.de/v1"
+      },
+      "models": {
+        "ggml-org/gemma-4-31B-it-GGUF:Q4_K_M": {
+          "name": "gemma4"
+        },
+        "demon-zombie/MiniMax-M2.7-AWQ-4bit": {
+          "name": "MiniMax-M2.7"
+        },
+        "unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M": {
+          "name": "Qwen3.6"
+        }
+      }
+    }
+  }
+}
