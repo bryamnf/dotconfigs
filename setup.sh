@@ -2,14 +2,14 @@
 
 
 ############# DYNAMIC-LINKS ##################
-ln -sf ~/dotconfigs/setup/configs/bash/bash_profile.sh ~/.bash_profile
-ln -sf ~/dotconfigs/setup/configs/bash/bashrc.sh ~/.bashrc
-cp ~/dotconfigs/setup/configs/bash/bash_secrets.sh ~/.bash_secrets.sh
-ln -sf ~/dotconfigs/setup/configs/git/gitconfig ~/.gitconfig
+ln -sf ~/dotconfigs/configs/bash/bash_profile.sh ~/.bash_profile
+ln -sf ~/dotconfigs/configs/bash/bashrc.sh ~/.bashrc
+cp ~/dotconfigs/configs/bash/bash_secrets.sh ~/.bash_secrets.sh
+ln -sf ~/dotconfigs/configs/git/gitconfig ~/.gitconfig
 
 ############## Config setup #################
 configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode")
-path_to_configs="$HOME/dotconfigs/setup/configs"
+path_to_configs="$HOME/dotconfigs/configs"
 
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
 
