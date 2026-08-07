@@ -2,6 +2,7 @@
 ###### prompt colors #############
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 set -o vi
+[[ -n "$TMUX" && -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ -x $HOME/.local/bin/mise ]; then
     export PATH="$HOME/.local/bin:$PATH"
