@@ -15,6 +15,9 @@
         },
         "unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M": {
           "name": "Qwen3.6"
+        },
+        "unsloth/Qwen3.8-27B-GGUF:Q4_K_M": {
+          "name": "Qwen3.8"
         }
       }
     }
