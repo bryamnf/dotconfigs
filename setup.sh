@@ -5,6 +5,7 @@ ln -sf ~/dotconfigs/configs/bash/bash_profile.sh ~/.bash_profile
 ln -sf ~/dotconfigs/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/configs/git/gitconfig ~/.gitconfig
 ln -sf ~/dotconfigs/configs/pi_agent/models.json ~/.pi/agent
+ln -sf ~/dotconfigs/configs/omp/models.yaml ~/.omp/agent
 
 ############## Config setup #################
 configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode")

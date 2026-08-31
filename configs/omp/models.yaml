@@ -1,0 +1,14 @@
+providers:
+  Apphubai: 
+    baseUrl: https://apphubai.wolke.uni-greifswald.de/v1 
+    api: openai-completions
+    apiKey: APPHUBAI_API_KEY
+    models:
+      - id: unsloth/Qwen3.8-27B-GGUF:Q4_K_M
+        name: Qwen3.8
+      - id: unsloth/Qwen3.6-35B-A3B-GGUF:Q4_K_M
+        name: Qwen3.6
+      - id: unsloth/gemma-4-31B-it-qat-GGUF:UD-Q4_K_XL
+        name: Gemma4
+      - id: poolside/Laguna-S-2.1-GGUF
+        name: Laguna-S-2
