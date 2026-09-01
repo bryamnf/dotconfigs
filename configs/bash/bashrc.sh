@@ -78,6 +78,7 @@ export FZF_CTRL_T_OPTS="
 --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' 
 --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"'
 "
+gw() { cd "$(git worktree list --porcelain | awk '/^worktree /{print $2}' | fzf)" || return; }
 ####### zoxide ###################
 eval "$(zoxide init bash)"
 function ct() {
