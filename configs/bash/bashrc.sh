@@ -95,9 +95,13 @@ __zoxide_zi_widget() {
   dir="$(zoxide query --interactive)" || return
   cd -- "$dir" || return
 }
+# helpers the macro depends on
+bind -m vi-insert '"\C-a": beginning-of-line'
+bind -m vi-insert '"\C-k": kill-line'
 
-# Ctrl+F -> clear line, run widget, execute
-bind '"\C-e": "\C-a\C-k__zoxide_zi_widget\n"'
+# trigger, from insert mode and from normal mode
+bind -m vi-insert  '"\C-e": "\C-a\C-k__zoxide_zi_widget\n"'
+bind -m vi-command '"\C-e": "i\C-a\C-k__zoxide_zi_widget\n"'
 ####### ripgrep ##################
 rg() { command rg --json -C 1 "$@" | delta; }
 
