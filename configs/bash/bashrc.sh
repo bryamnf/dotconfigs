@@ -73,7 +73,7 @@ export FZF_DEFAULT_OPTS="
 --color 'header-border:#6699cc,header-label:#99ccff'
 "
 export FZF_CTRL_T_OPTS="
---preview '$HOME/dotconfigs/setup/configs/fzf/fzf-preview.sh {}'
+--preview '$HOME/dotconfigs/configs/fzf/fzf-preview.sh {}'
 --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; fd --type f)' 
 --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' 
 --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"'
@@ -90,6 +90,14 @@ export -f ct
 function co() {
     ct && nvim $(fzf) 
 }
+__zoxide_zi_widget() {
+  local dir
+  dir="$(zoxide query --interactive)" || return
+  cd -- "$dir" || return
+}
+
+# Ctrl+F -> clear line, run widget, execute
+bind '"\C-e": "\C-a\C-k__zoxide_zi_widget\n"'
 ####### ripgrep ##################
 rg() { command rg --json -C 1 "$@" | delta; }
 
