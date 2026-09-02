@@ -6,10 +6,9 @@ ln -sf ~/dotconfigs/configs/bash/bashrc.sh ~/.bashrc
 ln -sf ~/dotconfigs/configs/git/gitconfig ~/.gitconfig
 ln -sf ~/dotconfigs/configs/pi_agent/models.json ~/.pi/agent
 ln -sf ~/dotconfigs/configs/omp/models.yaml ~/.omp/agent
-ln -sf ~/dotconfigs/configs/herdr/config.toml ~/.config/herdr/config.toml
 
 ############## Config setup #################
-configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode")
+configs=("mise" "nvim" "tmux" "ghostty" "yazi" "opencode" "herdr")
 path_to_configs="$HOME/dotconfigs/configs"
 
 [ ! -d $HOME/.config ] && mkdir $HOME/.config
