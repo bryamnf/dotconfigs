@@ -117,3 +117,6 @@ function y() {
 ####### pixi #####################
 export PATH="/home/bryam-n-ez/.pixi/bin:$PATH"
 
+####### herdr #####################
+eval "$(herdr completion bash)"
+
