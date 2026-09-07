@@ -1,7 +1,8 @@
 node_modules
 package-lock.json
 package.json
-herdr-*
+configs/herdr/herdr-*
+configs/herdr/plugins
 release-notes.json
 session.json
 .plugins.lock
