@@ -13,10 +13,6 @@
       "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
-    "herdr-nvim": {
-      "rev": "e652ebf7b3d6713992e68a30aec588822e69fae5",
-      "src": "https://github.com/ChmaraX/herdr-nvim"
-    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
