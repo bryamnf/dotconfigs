@@ -10,6 +10,7 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 [ -d "$HOME/.local/bin" ]  && export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim 
 export OPENCODE_EXPERIMENTAL=true 
+export KIND_EXPERIMENTAL_PROVIDER=podman
 
 ###### mise-en-place #############
 [ -x "$HOME/.local/bin/mise" ] && eval "$(mise activate bash)"
