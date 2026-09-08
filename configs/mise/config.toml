@@ -10,6 +10,7 @@
 "aqua:sharkdp/fd" = "latest"
 "aqua:sxyazi/yazi" = "latest"
 "aqua:zoxide" = "latest"
+bun = "latest"
 clang = "latest"
 "conda:basedpyright" = "latest"
 "conda:poppler" = "latest"

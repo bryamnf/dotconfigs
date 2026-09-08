@@ -119,3 +119,6 @@ export PATH="/home/bryam-n-ez/.pixi/bin:$PATH"
 
 ####### herdr #####################
 eval "$(herdr completion bash)"
+
+####### Bun #####################
+eval "$(bun completions)"
