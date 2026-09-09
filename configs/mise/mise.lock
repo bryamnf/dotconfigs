@@ -9351,9 +9351,19 @@ url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.
 checksum = "sha256:2d93385b99f3e82cf2701609a1bffcad863fbeb75aa3fe7eb6be4d29be68b1ae"
 url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-unknown-linux-musl.tar.gz"
 
+[tools."aqua:zoxide"."platforms.linux-x64-baseline"]
+checksum = "sha256:2d93385b99f3e82cf2701609a1bffcad863fbeb75aa3fe7eb6be4d29be68b1ae"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/466316293"
+
 [tools."aqua:zoxide"."platforms.linux-x64-musl"]
 checksum = "sha256:2d93385b99f3e82cf2701609a1bffcad863fbeb75aa3fe7eb6be4d29be68b1ae"
 url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools."aqua:zoxide"."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:2d93385b99f3e82cf2701609a1bffcad863fbeb75aa3fe7eb6be4d29be68b1ae"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/466316293"
 
 [tools."aqua:zoxide"."platforms.macos-arm64"]
 checksum = "sha256:b55ae6f2f5f23d0a6ccb3bd4eeb2af9c7e0a6556e5255c82100e40305129bbb0"
@@ -9363,9 +9373,19 @@ url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.
 checksum = "sha256:18ab7ae2633ad6e2ab79a4e665cbba1e95b7c872d44523326efb793202451dad"
 url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-apple-darwin.tar.gz"
 
+[tools."aqua:zoxide"."platforms.macos-x64-baseline"]
+checksum = "sha256:18ab7ae2633ad6e2ab79a4e665cbba1e95b7c872d44523326efb793202451dad"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/466316167"
+
 [tools."aqua:zoxide"."platforms.windows-x64"]
 checksum = "sha256:f465ae548f8754c8e7edbc60b45fbf58c92bfe123db83d790252d6810fa5daf1"
 url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-pc-windows-msvc.zip"
+
+[tools."aqua:zoxide"."platforms.windows-x64-baseline"]
+checksum = "sha256:f465ae548f8754c8e7edbc60b45fbf58c92bfe123db83d790252d6810fa5daf1"
+url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/ajeetdsouza/zoxide/releases/assets/466316769"
 
 [[tools.bun]]
 version = "1.4.2"
@@ -12206,43 +12226,63 @@ url = "https://github.com/junegunn/fzf/releases/download/v0.74.3/fzf-0.74.3-wind
 url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/517537078"
 
 [[tools."github:can1357/oh-my-pi"]]
-version = "18.0.11"
+version = "18.1.13"
 backend = "github:can1357/oh-my-pi"
 
 [tools."github:can1357/oh-my-pi"."platforms.linux-arm64"]
-checksum = "sha256:e5f77cb65aa2dc777a8a5932be3b2e6a44271c8df2eb209cea6f04f212f3f010"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-linux-arm64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576891"
+checksum = "sha256:06fc72183ca0c5b3add7d1dcc1a3005e17b9b67b679f04b5c646b08bfe763cb6"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-arm64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897007"
 
 [tools."github:can1357/oh-my-pi"."platforms.linux-arm64-musl"]
-checksum = "sha256:0ac3d5dadf6dc463f26b19c75b9e8f0ff95c679c02fab220707f4815acfe00ee"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-linux-musl-arm64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576883"
+checksum = "sha256:4871442fc6f5a8fcb39da394c07a02a52af5176d511ce56c99ec717a87ecee85"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-musl-arm64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897006"
 
 [tools."github:can1357/oh-my-pi"."platforms.linux-x64"]
-checksum = "sha256:6054460b29e9bad5eba78336f291e1979c2fa0a5cd96fc2d92afd666cc681d26"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-linux-x64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576894"
+checksum = "sha256:3be5a308cc91e6f6bba148175fbe651d3583ff6d32ae221cb931dc08a64e1f39"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897008"
+
+[tools."github:can1357/oh-my-pi"."platforms.linux-x64-baseline"]
+checksum = "sha256:3be5a308cc91e6f6bba148175fbe651d3583ff6d32ae221cb931dc08a64e1f39"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897008"
 
 [tools."github:can1357/oh-my-pi"."platforms.linux-x64-musl"]
-checksum = "sha256:7e76b70ad787278989923d98451a2c8d3e6b7372a82e1c6c9cb821673956a771"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-linux-musl-x64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576884"
+checksum = "sha256:fd3b00efa2f219787ce3b2f65a8bd8a34edf298f6e2be745cd8ce9afe4ebd2b9"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-musl-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897005"
+
+[tools."github:can1357/oh-my-pi"."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:fd3b00efa2f219787ce3b2f65a8bd8a34edf298f6e2be745cd8ce9afe4ebd2b9"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-linux-musl-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897005"
 
 [tools."github:can1357/oh-my-pi"."platforms.macos-arm64"]
-checksum = "sha256:88b4a3e68e19904b8fcc1ba4b319ef68795f4fe06a6d101d564fc482cb0cc252"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-darwin-arm64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576888"
+checksum = "sha256:a4c5c9cc5b8222184d0d7429b0bb6ac2a92bbe45dd11bf68e4b1360050791909"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-darwin-arm64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897009"
 
 [tools."github:can1357/oh-my-pi"."platforms.macos-x64"]
-checksum = "sha256:80f7dc579b88d0e55b5ce4eb4d0e940711af69328f4ffb2c293b8e1497ff7a2d"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-darwin-x64"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576889"
+checksum = "sha256:224ee40faaff907359504749942d0df47860b96ba8098ca5127384554707f48a"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-darwin-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897004"
+
+[tools."github:can1357/oh-my-pi"."platforms.macos-x64-baseline"]
+checksum = "sha256:224ee40faaff907359504749942d0df47860b96ba8098ca5127384554707f48a"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-darwin-x64"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897004"
 
 [tools."github:can1357/oh-my-pi"."platforms.windows-x64"]
-checksum = "sha256:3402325fff22ab8972d890af28ca4ea6670bfc43aa5a9042b9b02b7ab93e6f6a"
-url = "https://github.com/can1357/oh-my-pi/releases/download/v18.0.11/omp-windows-x64.exe"
-url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/535576886"
+checksum = "sha256:5d75a584acd1d8775d2ea6a14c3ea0dbdf8eb71a54bdab6ae7f38ab971aef877"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-windows-x64.exe"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897001"
+
+[tools."github:can1357/oh-my-pi"."platforms.windows-x64-baseline"]
+checksum = "sha256:5d75a584acd1d8775d2ea6a14c3ea0dbdf8eb71a54bdab6ae7f38ab971aef877"
+url = "https://github.com/can1357/oh-my-pi/releases/download/v18.1.13/omp-windows-x64.exe"
+url_api = "https://api.github.com/repos/can1357/oh-my-pi/releases/assets/547897001"
 
 [[tools."github:clangd/clangd"]]
 version = "22.1.6"
@@ -12263,7 +12303,17 @@ checksum = "sha256:a9c77443af2e447ed467e84771848d3a6ac1c56f84bcfcde717e66318de77
 url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-linux-22.1.6.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432532275"
 
+[tools."github:clangd/clangd"."platforms.linux-x64-baseline"]
+checksum = "sha256:a9c77443af2e447ed467e84771848d3a6ac1c56f84bcfcde717e66318de77cfa"
+url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-linux-22.1.6.zip"
+url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432532275"
+
 [tools."github:clangd/clangd"."platforms.linux-x64-musl"]
+checksum = "sha256:a9c77443af2e447ed467e84771848d3a6ac1c56f84bcfcde717e66318de77cfa"
+url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-linux-22.1.6.zip"
+url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432532275"
+
+[tools."github:clangd/clangd"."platforms.linux-x64-musl-baseline"]
 checksum = "sha256:a9c77443af2e447ed467e84771848d3a6ac1c56f84bcfcde717e66318de77cfa"
 url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-linux-22.1.6.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432532275"
@@ -12278,7 +12328,17 @@ checksum = "sha256:631aef462556cbd74e0ebaae1778a38d1997d0ba3371652ca54f82652a179
 url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-mac-22.1.6.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432538229"
 
+[tools."github:clangd/clangd"."platforms.macos-x64-baseline"]
+checksum = "sha256:631aef462556cbd74e0ebaae1778a38d1997d0ba3371652ca54f82652a179e7d"
+url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-mac-22.1.6.zip"
+url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432538229"
+
 [tools."github:clangd/clangd"."platforms.windows-x64"]
+checksum = "sha256:ce54f16e0b4fd76d450eeda9664420b195360b73febcfe40e661108fa57f2ce1"
+url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-windows-22.1.6.zip"
+url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432519407"
+
+[tools."github:clangd/clangd"."platforms.windows-x64-baseline"]
 checksum = "sha256:ce54f16e0b4fd76d450eeda9664420b195360b73febcfe40e661108fa57f2ce1"
 url = "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-windows-22.1.6.zip"
 url_api = "https://api.github.com/repos/clangd/clangd/releases/assets/432519407"
@@ -12371,12 +12431,72 @@ url = "https://get.helm.sh/helm-v4.2.3-windows-amd64.tar.gz"
 version = "0.8.2"
 backend = "github:ogulcancelik/herdr"
 
+[tools.herdr."platforms.linux-arm64"]
+checksum = "sha256:f55610658e1c2e0d2aaef730b4b2ab885f7f8ba00285ab372bfb14f2e3d5b40d"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-aarch64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169113"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.linux-arm64-musl"]
+checksum = "sha256:f55610658e1c2e0d2aaef730b4b2ab885f7f8ba00285ab372bfb14f2e3d5b40d"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-aarch64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169113"
+provenance = "github-attestations"
+
 [tools.herdr."platforms.linux-x64"]
 checksum = "sha256:976150a14d490c94b243ea2e1a7eb2dfb67f12e36b182db90936f6728e6aecf4"
 url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64"
 url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169107"
 provenance = "github-attestations"
 provenance_verified = true
+
+[tools.herdr."platforms.linux-x64-baseline"]
+checksum = "sha256:976150a14d490c94b243ea2e1a7eb2dfb67f12e36b182db90936f6728e6aecf4"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169107"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.linux-x64-musl"]
+checksum = "sha256:976150a14d490c94b243ea2e1a7eb2dfb67f12e36b182db90936f6728e6aecf4"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169107"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:976150a14d490c94b243ea2e1a7eb2dfb67f12e36b182db90936f6728e6aecf4"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-linux-x86_64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169107"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.macos-arm64"]
+checksum = "sha256:a5d4f4d504d8b309c91f811050559300faba31258425f53c50852fc96f6ae574"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-macos-aarch64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169108"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.macos-x64"]
+checksum = "sha256:ab50262c8190cd7aa9056d249d255c08c328c3e8716de9cfa29db4f131b8e2c1"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-macos-x86_64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169110"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.macos-x64-baseline"]
+checksum = "sha256:ab50262c8190cd7aa9056d249d255c08c328c3e8716de9cfa29db4f131b8e2c1"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-macos-x86_64"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169110"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.windows-x64"]
+checksum = "sha256:0ab3d0fe1434d55757997542b978c771d642987bb15a7130f4160f0db38821d5"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-windows-x86_64.zip"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169109"
+provenance = "github-attestations"
+
+[tools.herdr."platforms.windows-x64-baseline"]
+checksum = "sha256:0ab3d0fe1434d55757997542b978c771d642987bb15a7130f4160f0db38821d5"
+url = "https://github.com/herdrdev/herdr/releases/download/v0.8.2/herdr-windows-x86_64.zip"
+url_api = "https://api.github.com/repos/herdrdev/herdr/releases/assets/521169109"
+provenance = "github-attestations"
 
 [[tools.imagemagick]]
 version = "7.1.2_31"
@@ -14149,6 +14269,65 @@ provenance = "github-attestations"
 [[tools.rust]]
 version = "1.98.1"
 backend = "core:rust"
+
+[[tools.starship]]
+version = "1.26.0"
+backend = "aqua:starship/starship"
+
+[tools.starship."platforms.linux-arm64"]
+checksum = "sha256:dc30189378d2f2e287384e8a692d3f95ad1df64cf0e8c36aa9201516028aed6b"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374586"
+
+[tools.starship."platforms.linux-arm64-musl"]
+checksum = "sha256:dc30189378d2f2e287384e8a692d3f95ad1df64cf0e8c36aa9201516028aed6b"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374586"
+
+[tools.starship."platforms.linux-x64"]
+checksum = "sha256:321f0dd7af8340a5f2e6a8fec6538a04f617486f9ec70d878f91c09cd8deef22"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374620"
+
+[tools.starship."platforms.linux-x64-baseline"]
+checksum = "sha256:321f0dd7af8340a5f2e6a8fec6538a04f617486f9ec70d878f91c09cd8deef22"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374620"
+
+[tools.starship."platforms.linux-x64-musl"]
+checksum = "sha256:b7c232b0e8249d8e55a40beb79c5c43a7d370f3f9408bd215deb0170daeaadf3"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374630"
+
+[tools.starship."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:b7c232b0e8249d8e55a40beb79c5c43a7d370f3f9408bd215deb0170daeaadf3"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374630"
+
+[tools.starship."platforms.macos-arm64"]
+checksum = "sha256:c40b27b11f580411e068f2fa6c1be7830a387c0bc47a94d1d37f32b054c5361d"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374577"
+
+[tools.starship."platforms.macos-x64"]
+checksum = "sha256:5548f406a4b6f5695903bdea83f77ce47ec12c8c0e62dabd33122d8f133e4207"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374608"
+
+[tools.starship."platforms.macos-x64-baseline"]
+checksum = "sha256:5548f406a4b6f5695903bdea83f77ce47ec12c8c0e62dabd33122d8f133e4207"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374608"
+
+[tools.starship."platforms.windows-x64"]
+checksum = "sha256:690021e22f2bf2c57d5867dc0fababe5e55e714c26942bd909ffddb6c5df42f2"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374615"
+
+[tools.starship."platforms.windows-x64-baseline"]
+checksum = "sha256:690021e22f2bf2c57d5867dc0fababe5e55e714c26942bd909ffddb6c5df42f2"
+url = "https://github.com/starship/starship/releases/download/v1.26.0/starship-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/starship/starship/releases/assets/460374615"
 
 [[tools.tmux]]
 version = "3.7b"
