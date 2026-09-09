@@ -3,6 +3,8 @@ package-lock.json
 package.json
 configs/herdr/herdr-*
 configs/herdr/plugins
+configs/herdr/sessions
 release-notes.json
 session.json
 .plugins.lock
+
